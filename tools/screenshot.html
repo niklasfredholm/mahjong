@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;background:#222}
+#frame{border:0;display:block}
+</style></head><body>
+<script>
+var q = new URLSearchParams(location.search);
+var w = +q.get('w') || 412, h = +q.get('h') || 820;
+try {
+  localStorage.removeItem('mahjong.save');
+  if (q.get('layout')) localStorage.setItem('mahjong.lastLayout', JSON.stringify(q.get('layout')));
+  if (q.get('bests')) localStorage.setItem('mahjong.bests', q.get('bests'));
+} catch (e) {}
+var f = document.createElement('iframe');
+f.id = 'frame'; f.width = w; f.height = h; f.src = '../index.html';
+f.onload = function () {
+  var d = f.contentDocument;
+  var moves = +q.get('play') || 0;
+  if (moves) {                       // play a few real moves before capturing
+    var W = f.contentWindow;
+    var layout = W.Layouts.all.filter(function (l) { return l.name === d.getElementById('stat-layout').textContent; })[0];
+    var slots = W.Engine.analyse(layout);
+    var labels = {}; W.Tiles.faces.forEach(function (x) { labels[x.label] = x.id; });
+    for (var n = 0; n < moves; n++) {
+      var tiles = [].slice.call(d.getElementById('board').children);
+      var faces = tiles.map(function (t) { return labels[t.getAttribute('aria-label')]; });
+      var present = tiles.map(function (t) { return !t.classList.contains('hidden'); });
+      var opts = W.Engine.availableMoves(slots, faces, present);
+      if (!opts.length) {
+        if (!q.get('autoshuffle')) break;      // leave the board stuck on purpose
+        d.getElementById('btn-shuffle').click();
+        continue;
+      }
+      tiles[opts[0][0]].click(); tiles[opts[0][1]].click();
+    }
+  }
+  if (q.get('click')) d.getElementById(q.get('click')).click();
+  if (q.get('hint')) d.getElementById('btn-hint').click();
+};
+document.body.appendChild(f);
+</script></body></html>

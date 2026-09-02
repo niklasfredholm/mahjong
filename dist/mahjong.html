@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Mahjong</title>
+<meta name="description" content="A calm, offline game of mahjong solitaire.">
+<meta name="theme-color" content="#10362a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAABAJElEQVR4nO29ebxcVZXo/917n3NquPOYeU4ghIQQQsJgh8iMAgrCVYaW/mmDtuODdmptJS/a7XNosVscaHH4PRQUAg4NKpgECAgJEIiBJAYykJnce5M736o6w977/XGqbgYGzViVm/p+PkdM3Rp21Vlr77XWXnstwdFDzJ07Vy1pbrYsWKAHHm1pUWOb+kfKHFOtNWdibbMVcoYwxkFwCgh1FMdY5vBhEUJYY3qBtUiJEKwQxm40khUgX970k99v3ucVc+c6xPJhAHs0BimO+CfMmydZs0bsLfQTb7xkpIFZGHEp2NnGijFSimohJQDWWMBitTniwytzhBECoSRYS3x/LdZYjLE9AlYLKZZazOOe9R5/+Sf/0zvwupYWdTQU4cgpwH6CP/H6S6ojT1whEVdba94uPacKBFYbrDFgrAWbl3hRGJdEcJTmgjKHnYF7Z03+H/k7KSRSCKkkQslYISK9HVhorfiNU2UeXn/7wz4QrwpLlmiOkBQcCQUQtLTIguCP+YeLJkuprgH+UTpyJIAJNVijQVgsEoE4QmMpU7pY4mnPCqwUSknhKLAWq81aC/ci/R+8+uNHW4EjpgiHV+jiZUsDjP/7C6daR/0zQlwnXZWwocYanTeDhDzsn13m2MZiEBislcJRUjoKE0atFnHHPoqwl4wdDg6XEA7M+uNbLqixle6nwX5WOsozQYS1VgtEYaYvU+YtsdYaEEYo4UjXweYVQfSF3964YFE38+ZJ5s+PHcVD5NAFci+NHPPBS64RlvnSdU4wfhgLvijP9mUOEou1oIUUjkq46CB8xSJu3vzTP/wBOCyrwaEJZmyXRcPff36Dp7zvSkdeY7XBRCYSAnXI71+mTIy1Fi0d6QglMVr/SPZFn964YFH3oSqBPOghtbQoliyJRl934ds8x10qXXWNCUJtI22EwKEs/GUOH0IIHBtpY/zQSOXcaCqdZ0dfd+HbWLBAz5031znoNz6o1+Tt/bE3XPxhoeR3AcdEOhJCHPRAypT5W7HWaukoBUQ20h/d9LM/3nmw+wYHqgADwj/mHy66Q7nuh00QWqy1xLZ+mTJHCasRUkolhYmi/9x018JbDsY5PhAF2CP8N1z8Qyfh3qRzvqYQ3bEH+G5lyhwsBVmzWIQ1KplQUS68c/Ndj3zoQFeCv1Vk9xV+z7lJ58IQgXuw36FMmcOGJVRJ142CKFaCA1gJ/hYFEMydq1iyJNpL+CNiR7dMmdLAEqmU50S+f+fmuxZ+aO68uc6S+X995/ivK0A+1Dnm7y+4w0klP6yzQUnO/ELk8ymEwNpy8tBfo/A7WRg8v5clVGnP1Rn/Pzf9fOEtzJvrMH9J9FYveWsFyAv/2Osv/LBMeneYIIygtGZ+JWL3I9CaINJoa1FSoqTck3tVZg8i/llCrVFC4CqFpyRSCoyxx3reoQW0dJQT+eGHttyz6M6/tk/w5goQ21FmzPUXnCkd9bQ1xmApmV1dJQWRsWSCECkFw6urmNzcwLDqCpor0wytqiQyppx9sQ8WKSW9OZ/NnT1s7+5l3a5OWnv7yYYhadfBcxziW33MYhFYIaUwkT57892LlhVk+Y2e/GazuQAY+Y8X1RNwtwWssQIhii5NUgiMtXRlfaqTSS45aQJnjxnB1OFDGVpXT7qiGjdRgZtIY235PMH+CAQ6CglyvWSyfbR37mJD2y6e2foaj6/fwvbuHio8F1dJtDkm1SAWEAlIeffIf7xo1jboYq/k7H2f/Aa03NeiFrx3gR5z/YX3yaTbonNhJErA6VVSkgkCPMfhvIljeffUiUwbPZa6ptF4lfU4yUpcN4mQCinKkdn9GYgeWouxBhOFBNkesj1tZLvbWL9jK3/4y3p+u2odHZkM1ckk2hybk4i1RCrpOiYXLth898L3FmR6/+e9Xj7yNtPo6y+8WiWcBSaISsLuV1LSnctx0pAmPvl3pzNz3Diqm8ZQ2TiKRLISYS3Waqw1ZdP/b0BAfC5FShCSIPTp69hBf/smXtq0gf/7/CoWv7yRqmSCQlbaMUgkPcfRftSy5e6F97+RP7C/AgjmzRMT1z9TGQqzQigxzka66Lu8SsTCf+mUSXzsbTMZM/YkaoadSDKZxpoIk5+lSsBCO+YoRICEEEjlEoQBPa0baN/+Mve+8BL//fQLJBx1bB7Ms9YIRwmr7asqbU7b2FnXt/8m2b6C3dIimT/fBFZ/TnrOeBNqA0JS2FIowqUQdGVzvOvkE/jCRXOZOOVMmsaeSsJLoCM/n4VREu7JMcnev52OAhwpaBx1EsNPPIsPnD2b/zVnFtkgwloQRZSDg7oQ0oRGy4Q7XveKW1iwQDNv7j5FFvZITX73bOz1555gpfsixjjx2VwrimNJx+HMnlzA5SdP4l8ufjvDTziTypomdOjnTw2Xhf5IYK1FKZdsrp+OTS/wsyf/xH898RxJVx1jplB8IFkIYa0QvUaEM7fe9dhG5s0ThajQHtt+zRoBGGvVF6SjPO1rLURhhTj631pJSXc2x/knjOezF/wdwybNprK6ER3mim2RDXqEEGgdkkqmqR97GtcGWXJRxO1PPkdtKnGsRYeEMcaopFeDr+cBN7BmzYAA7am+AGb0deePF0quwVhvv78fVaQQ+FHEiNoabnv3+Uw+6UwaR5yAjvyy8B9FrLUox6Wns43tryxl/h8e59FXNlKV9I41JbAi3gDMSG0mvPrLR1vJB8RiabqvJTYoDP8gHSdhjTXxdgJFs9+MhQ+deSqTxp1E3bCJmCgoC/9RRoh4z6C6figNw0/gQ2edSlNlJUGkjzV/QBhjjXTdCiPERwC4r0UC+Z3d9y4wTS1zK60UH7ahRhRR0qQQ9AUBp48aztkTx1HZPBElimGElYFYCUwUUDd0IpNGjOGdUyaQCaI4fHoMIRDSRhor5D+d+MGzq3jvAgMIOXfuXAXYlOO8W7nOEKO1psjepSMVV06bREPzaNJVtWgdlaM8RcRai+t5VDaN5dIpExlRUx2vAsUe2IEhrNZGunJINlc5F7DMnavkkubm2FWG622+PFWxViohBP1hyNRhTZwxfhyVjWMR1u5VKK5MMRBCYKOQivrhjB82irdPHE0mDIlPJRbbujmAS2ARAmvNPwHQ3GxlvOs7ZxiCOTaMAGTRDDUBkdbMGjWUxsbhpCprMTo61maaQYmxFs9NUFk/nLPGjsBTiq6cj7YGKaAExPtvuJA2jBCSuaOvnzOMBQt07AjoxCzpOJVWG00RnV+tDZVeglmjh+NV1iPze3BlSgWDV9XI5KFD+Nc5M7lk7HCqXJdeP8SauMZl0WX8r8yxVhstlKqUOjEL8vsAWtjLlBAYhC3WbCuFIBdGTGxuYHRDA166BsrZnCWDEAKrNclUJYlUFSc01jIm7XHBuBH8aVsrj21+jZ4goMJ14zrHJYpFWCkEWtjLgP+RU1paPCxvQ2v2bHwVB20N1QmPilQax4vTmcvOb+lgrcVxPBKpCrQQ9AQhlZ7LFZNG85kzpzFrWBN9QVjSlY6FQKI1WN42paXFk/2ybbgQjI5r8hdv3EIItLWMrqsmna5COd7gOao3SIglRJBMV5FMJHCkQhtDTxDSlEryoVNP5JqTxuPr+EBNiSqBsMYiBKP7Zdtwx1g1TUpZaeOtveKN2cYWT5Xn4bpe3EzB6HIEqNQQAsfx9tkHUEIQaA0a3jFhJAkl+fnqDSSUIr8DW0oIa60VSlYaraY5CDtTSIHVxhS3HVHspRhryjN/ifNG90fmJ6puP+DcMcMAuDuvBJRcKMMaIZVC2JkSGFF6AyxzrKLyvsF5Y4dz9eSx9IfhgHKUFhZghETY06yxYEvVZCtzrKGEoMcPuGDcCM4Y3kwmjEpLCWzsByDsaTLOkytT5vAihCAyhqsnj6U26eUrdJQYNk56O8VGcV5QCWxUACUbPShzAAgg0IamdJJzRg0lG+q4hGyx5SsOZclY5jlFglDFHs8b6ECZQYAUgmyk+btRQ2hMJwnyq0Cx5WuPnAl1bOW0ljmmEEBkDI2pJLOHN5GLdMltbBYt8a08/x8/RMYyrbmOhJLYosvXvldprgBHcZKwFoyx6L2uQtHYUsRC3DBrr/EaU7p1e6QQ+FozprqCYRVpgkjnu5+XBk7J3OmjuAgUBEhKgaMkuC57KucJMBobaiJjAIGSxb9h8Ua9xZES4TkoWdhgyo87jIi0wRiLkqVVJsZaS8p1GF6ZYkt3H4kS2hsresW3o0lcEhBcz0EpB6ymuzvLxh1t9GYCVL5C8tihNQxrrMRNpQCD8UN0XrCONoXPdVMeIIlyPq/t6GbTzm6kFGhjqUp7jB9eS01NKt7M1xFhECFFaRQLs8R7A0Mq05Ra2d3jRgG0NrHgOw47Wrv5zROv8NiKLby8rZP2zgx+mHfQrKW2MsmI5ipOndjMlXMmcc6pI3ETHlE2rkd0NITK2tiscVMJdBjy2HOb+PWT6/jz+ja2t/XS1ZeDfI3/hKtoqktz4sg6zp0xmivOOYHhQ2ogihVBlUCsw1jLsMo0jiytMx7HhQJobXHTKVrbu/k/P1/GQ09voLUzg6MkSU/hOhLPVQMWRS6MWLtpN39+pZVfLFrDlLGN3Hz1TK48bwo2DNCRQR7B1cAYi3IkwvX49aNr+M/7n2fNpl34gSbpObiupDLtDYzXWkt7Z4atrb08/OwmbrtvOZedPYHP//2ZDGmqIczkUKq4K4EFKjynhKz/GKdkvCdr2bNLcvjQ2uCmUzz05Fr+5Y4n2NzaTXVFgsaa1J6krnx3mcLdcZXCVZJ0ysVay+pXd/GBr/2Bh599la9/5O3UVibimfUIKIE2Ftdz6Orz+dwPFnLvo2txlKQi5VKR8vK/kYiTZPMfb4Ug4QoSrkIIQTaI+PHvXmTR8s187Z/O4bI5kwkz2aKvBMZYsAZs6TQvGdQrQDzzp7nn4ZV85Ft/JJVwaaxJo40ZMDEyfkgYaSK9p8CuqyTJhEPCdTAWKlIuUgh+9shqNu/s5t4vX0FNhUcURId1JTB54e/uD7hm3m95YuU2htRXYPJjlQL8SJPzI0K9J2vWURLXUaQTLhD7DI01aXZ1Z7n+yw/xg08FXHfJ9LwSlNocXFwGrQIUZv57Hl7Jx25bSE1lIj50Y+Jiut39Po4STBk7hBNGNTJ5TBMI6OnP8eL6VtZubmNbew+VKY+E5xBpw7CGCp5evYP33fobfjn/3VSnPYzWhyXRy1iLdBRdfT7XzPstT6/ewbCGCoLIoJQkCCM6swEjm6o5Y0ozp0wcQnVFEiys3dzOK1t3sWZTK5G2VFfE5QsTnsJzJR+7bSEA111ySkmsBKWEUxoL0eGNgBaE/3dPruUj3/ojNZWJgb+FkcYPIy6cNZGPvudMzp42Bs99/Tywvb2bXyxcyU8eWs72XT3UVaUIIkNjTYqnVu3ghq88xANfvTJuxGEP7dxO/Pr4RNwNX3mIp1btoKk2NSD8nb1ZRjRW86lr53DthdMZ0VTzuvcIwoinX9rM93+1jEXL15NwndivAaoqvPh3qPC4tMjmUKlteQ66qcBYUK5Da3s3/3LHE6QS7kAJ8KwfUpVO8OPPX8V9/3Y9bz9tQmxWBCG5nE8u5+P7AUEYMqKxik9fdw6P3n4j7z13Gh09GZSUhJGhqTbFohc2c/uC5ahEAnOIh/eNNahEgtsXLGfRC5tpqk0RRgYlJR09Gd577jQevf1GPn3dOYxorCIIQ3w/2DPmIEQKePtpE7jv367nx5+/iqp0gqwfDnz3VMLlX+54gtb2blTetCsDpZEBehizIawxSNfl63cv49Wd3aSTsZ8fRpqaihT3fuVarpw7Fd8P8IMwfr41uJ6Lm0zEm0jGEEaanB8wtL6SOz9/FTddPouuviyOipWgoTrFbfctZ92rrTieFzt4B4ExFsfzWPdqK7fdt5yG6lj4HSXp6sty0+WzuPPzVzG0vpKcHxBGGmFMvDeQTOB6LtIarDH4QawYV86dyr1fuZaaihRhpLEW0kmHV3d28/W7lyFdF1us1kfFlq39rkG1AhgLbtJj4+Y27n/8FeqqkoRRXLipPxty2yfewYwTRpDJ+iglkcTC5yYSRJkMwa52hOviJhIIKXGkIAg1YRTxzY+/k9lTRtHdn0Pld5C7+31++OCLCKUO+hintRahFD988MW8XyJRUtDdn2P2lFF88+PvJIwiglDjSIGQMh6f6xLsaifKZHATCRzPQ2JRSpLJ+sw4YQS3feId9Gfj1SGMDHVVSe5//BU2bm7DTXrlVYBBlgxnjAHp8IdnN9HZm8sLk6SrL8f1F53K5XNOxvcDPFdhjcH1PDpWvMCzN32AJ99xAUsuOpc/XX4JL3/n2whjEI6DFPEsLYXgPz7+DirypcGNsVQkPRY9v5nu7j4c98AjytaC4zp0d/ex6PnNVCS9gbykiqTHf3z8HXFXTGPjXV3HQRjDy9/5Nn+6/BKWXHQuT77jAp696QN0rHgB1/OwxuC5Ct8PuHzOyVx/0al09eVQUuIoSWdvjj88uwmkM9Ba6uhRbNl6/TWoVoBYWCIeX7EFx5H51AeL5zjc9K7T4ycJMSD8m+/9BU9deSnbH/wtmW1bCbu76Vq5gtVfvpWl115N1NWFkBIlwA9DTpk4nPNPn0hvJt4RTniKLa09rFzXhnCdAy4IZaxFuA4r17WxpbWHhBdXUejN+Jx/+kROmTgcPwxRAoSURF1dLL32alZ/+Va6Vq4g7O4ms20r2x/8LU9deSmb7/3FgBIUvPKb3nV63PvX2nxdH8njK7ZgTIkdUywSpecDHCTxbKro682yblsXCc8BYsd38pgmTho3BB1FSGtRrsvuFStY+blPIZSDV1+P9DyE4+CkK0gOHUbbo4t4ad4XBtqKFvbpLj5j0kAoVQqBH2pWbmiPf8oDVID4+ZKVG9rxwzicWgjVXnzGpIHPtDY+sP3SvC/Q9ugikkOH4aQr4hXK8/Dq6xHKYeXnPsXuFStQrou0Fh1FnDRuCJPHNJH1Q0CQ8BzWbeuirzeLU4yWR8WWr/2uQbMCGGtBKTZs76K1sx/PkQgBfhgxe8pIkp6b3+yKzZn1P7gdncuhkklsFBUkDWsMJghIDBnK9l89QNeql3A8D0FcNHXW5BE0VKcJo7jbpqMEK9e3AQdexS5+vmHl+jac/AZVGGkaqtPMmjxi4DMdz6Nr1Uts/9UDJIYMxQRBPMsXxhxFqGQSncux/ge352d2S6QNSc9l9pSR+GGEEOA5ktbOfjZs7wKlSrqM4dFg0CgAAELQmwnwgz39BIyxjGyqBvIzqefh9/bS+5c1qFQKE0Vv+l42CulY/mxc6i+fptFYk6YyvadPlhCC7j4fOPCyGvHzLd19/p5OjcZSmU7QWJOO3zM/+3csfxYbhW+64WCiCJVK0fuXNfi9vQhvT2W9kU3VA1EqIQR+ENGbCcpFxxhsCgDIN8iF33uSE0KgfZ+ovy+uPvcWWGsJu7r2fewNbLVDTYd4/est+x/JCbu6/qqJJaQk6u9D+/4+v8H+LxNCHNFkvmOJ0ooCHYZkOCX3vblCCHoyfuEfmDAkUVNDasRITBC8pRIIIamePGXvR8jkQvxg37OtziHuqu79+niG1mRysc1eoHrylLfskSakxAQBqREjSdTUYMI9q0VPZl+FkLKYh3xKQM72uuQeR6t0roNBCgFRxMQRtTTWpAc2gDxH8cyarWhjcKQEY1Cuy9CL34nOZhDq9dUghVKYbJbU6NHUzz4DbQwmb5G/uL6V9q4+PDcWxjAyTJvQCBy4PR0/XzFtQiNhXKYDz5W0d/Xx4vpWLAKDQBtD/ewzSI0ejclm33TMOpth6MXvRLku5L+vNoZn1mzFc9TAhmBjTZqJI2ohOvqRoGLL1v7XoDGBhAAdGerqKhg3tBo/1IAllXRZtaGVTTt2oxyFFZIoiphw0z/RfO75ZHdsRyiFUE4cZ3ccdC5HlOln6vx/J9XUhAkLKQWwaPl6jLFxjRssjpJMG9cE2IN0gi3TxjXh5A+MC+K4/6Ll6wcO35gwJNXUxNT5/06U6UfncgNjFcpBKEV2x3aazz2fCTf9E1EUYYVEOYpNO3azakMrqWScKeqHmnFDq6mrq0BH5rh3AwaNAgDxLO94nDV1OEH+hJebTym4/7HVsTBZC9YgHMWs//4JY657P1FfL0HnboLduwg6Okg0NjL7pz9n+DsuJQwCrJQ4jqKto5eHn1lHRSresApDw5C6NDNPHAL6wGdTGWstM08cwpC6NGEYn+mtSHk8/Mw62jp6cRyFlZIwCBj+jkuZ/dOfk2hsJOjoiMfbuZuor5cx172fWf/9E4SjwJp4j0EI7n9sNV19WVwlESLe2T5r6nAcx0MXKx2ihBhU6dDxkUbNO88cz3ceeGFg86emMsl/LXiad551AtMmDifnBzgYnLo6Zn73Dsb944fofGE5YVcXVZNPouGMs0g1NhIGAQiJye+u3vqjRWxt66K+Og3W0p8LuWDmGIYOqSXK+gfsWAoBURAxdEgtZ04Zzm+fWk9tZYKE57C1rYtbf7SIOz57JWGkUVISBQEj3nkZ9bPPZPczS+ld+xfc2lrqTjud+hmnxd83iogMJBMeL63fwX8teJqayiTaxGHapOfwzjPHgy29Gj3FoPSqQhwCSgoiP2DG5OG8/dRRLFy+mbqqBNZC1g/55Lcf4tdfez+1VSmyuQDHhhigfsZpNMw4beB9NBD6PiZ/RjiZ8Ljr989z7+IXqa9KobXJV16AGy+bFvvvh/C1sfH7/M/T6+PP14b6qhT3Ln6Rs6eO5oZ3zsQPQsiPy2tsZOSll8Ollw+8RxQEAEQGUkmPrt4sn/z2QwRhRGXKQwjo7PW58PQxzJg8nMgPjr4jvL8PWgKUVhTocPwqNjYtvnjDWaQT7kDtnKp0ghXrdvC+L93Dxu27SSU9HCdOC/azOXLZLLlMllw2S5jzQUoSnkfCc7nj18v459t/R2UqzgNyHUlHT45rz5vMnNPGEeX8gxYmJQVRzmfOaeO49rzJdPTkcB0Z7wekPP759t9xx6+XkfBcEp4HUhLm/H3G62dzGAuO45BKemzcvpv3fekeVqzbQVV+z0IbSzrh8sUbzopNr6IJYLHla99rUPkAEIf4wpzP9Mkj+cy1s2jtyOA6kkgb6qpSLF+7nYtv+QnfvHsJbV39JBIeyVSSZCpFMp2K/5tM4LoOS1Zs5Kov/IzPff9h0kkXAKUEPZmA0UOqmX/jHIw+DF1shMBozfwb5zB6SDU9mWDg6GI66fK57z/MVV/4GUtWbMR1HZLJxL7jTSVJJDzauvr55t1LuPiWn7B87XbqqlJE2uA6ktaODJ+5dhbTJ48kzB24uTZYGVQ+QAGpJGEuy83XzOa1XX187zcrGFJfQRgZqtIemVzI/J8s5q4/vMD5p0/k5HHNTB7TlD8qmePF9Tt5Zs1W/rRyE9pY6qpSsYOtJP25kLqKBD+/9TKa6iuJcsGhb4QJMGFEU30lP7/1Mlq++Bu6MwEVSXdAcR99fiNLVrzK300fyxlTRnHKxKHUVCSx1rJ2czurX21j8fL1vPpaJzUVSarS3l7C38//uuo0br5mNmEuiywfiRxgUCqAACQCE0Z845MXYIHv/voFmusqsMSzeFNtBbu6M/zkoeUAuE4cWzfWEkaahOsM2M7axILU1efTUJXk/n+7guknDj+sRwulFIRZn1NPHM79/3YFV3/xN+zuzcUVKCJDTUXsyzz5500sem49rqMGok6FvKSKlEdTbUV86D//nq/t7uPjV57GNz55AdoPkIiSK01STErPCT5M4xH5ejmRH/DNT5xPOuXy3QdeQEpBZSrOk/FcRdJLxx+b38QS5Hvi5jNAC7H69q4MU8Y08sPPXsz0E4cTZLKHvAO8P0pJgkyW6Xkl+NA3HmHN5l3UViYHxlSV9qgWCfauXyryZV0KUS8lJX3ZAGMsn73uDObfeA6RH8R5RcWO/JSeEzx4EUIgLER+yPyb3s4DX7mCk8Y00Nmbo6vfJwj1QJKYzKc3FwRNG0vGD9ndk8VayyfecxqL/usapp8whPAICH8BR0nCTJbpJwxh0X9dwyfecxrWWnb3ZMnkSzRauycdu7AKGGMJQk1Xv09nb46TxjTwwFeuYP5NbyfyQ8SAMpfZm0FpAu2NEPGsHmZyvH3WOBZNHc6jK7bwi0V/4bm1O2nvyuAHep80BkdJqtIek0c3cPnbJnLl3ElMGt0IYUiUC494RQWlJFEupCqh+OpHz+MDl53Cr5es48Gn1rNpZzddff5AHSOIlTfhKZpq01w0eSjXXnAS580YjZdKlERVuFLGKZVC4JZCBqTlSNRHV0oQZX1cJbjk7ElccvZEdu/q5ZXtXaza2E5Xb1wnSBvLiaPrOWFUPeOH1+ImE2Aiwqwfz7hHKXoipUBri4l8Jo2s47PvP5tbWmaycUcXr2zt4OUtHXEIVVtqqxJMHd/ECSNqaWisAgQ2CIiyfkkJf3x37V73uvgM+hVgb6QUGAsm6yOAhto0ZzVWcdb0MeyrdAaswQYRYSaLKFL2pBBxVeUoiLAmxFGSE8c1cuL4Zi7fx3q18ZgjTZQNBhzgcqjzr1N6TvARRsCAMOvIYEL9ujz7QuKbEKIkqqjJWBMwgPXDgWOSezPgE5S60JeYE3xcrQD7U5hhj5W+lIUI1T6VfMscEsWf3sqUKSJlBShzXFN6/QFKZDhljgSWfY5jlQDlFaDMcU1ZAcoc15QVoMxxTVkByhzXOCXii5R94OOB0vOBS20FKJFfpcxxg1M6Qldie+RljhCldZ9LbAUoU+boUnrJcKUynjJHhhK7z+UVoMzRpUQEv0BZAcoc15QVoMxxTQlGgcoMbkrLCSg9J7jM4Ka05L9sApU5vnFKRBFLaVIocwSJ+3SWzr0urwBljmtKzwcolfGUOfzsX528BCjBKFCpjKfMkaG07nPZBCpzXFNWgDLHNcdtYSxr95QTL5QX3/O3fKl0KY56H923wliLzVez3qcTPOxTMbqEhlzylJ4TfIQx1mJM3BtAuR7xIqjZU5TXAvlG1Faj/RBjbFFLJGptkFLgJFwQhSbZmj3jFcRjNhCGBKGOa4OWoiaUlgtwfK0AWhvcpAvSpbe7lxXrtrFiQzsvrW+jq8/HUXFn9RNH1XPy+EZmTBrK5LENKKnQuVzcWfwo1t40xiIEuOkUGM3aV3ezYt1OVm/cxctbO+LWqdpQW5lg2sRmZkxoYsakZqpqqsCEhEehlPuxznGhAIVuKm66gg2bW7nrj6t56KkNbNrZTZDvwVvoBAOCh5/dhBRQlfY4a+oI3nveZFrefiJIQZgNjopQaW1wUx4Yy4LFq7nv0bUsXbWd3kwQd4RUcmC81lrufWwtnqMYO7SGy942gRsuOpkJY4YQ5TJ7aooWlWJ//htTgmHQw4sxFsdVICX/+cun+e4DL/Da7j6qKxJUpj2kEPlWSHtGUVAFrQ2Ln9/MI8+8yj1/XMNXbprD1InDCDKZI9YhBiDSBi+dZtX61/jSnU+y+PnNOI6kIulSV53ax/ABBsZvrGXH7j7+4xfPcvcf1/Dxq07j5vfOAmOI8mZRcSm9jQC5/5BK4Tpck4UxFsdz6c4EXHPrb/jinU+SDSKa6ypwHTUgSMYYckFELogIwz3dYqQQVKc9GmpSPLZiC5d+ZgH3LnwJL53ep0PL4aQg/PcufIlLP7OAx1ZsoaEmRXVeWSHfyC/UA2M2+aZ4grjZX3NdBdkg4ot3Psk1t8YdJx3PHWgHVUyKLVv7X7LoI3hDDTh0jLEo16Gr3+d9t/6WB5dupLkujZIitq2B7n6fjp4MoTY0VKdpqEmTTrr09vt0dGcIIo0QIt+qNEmoLR/+5iPc8/DKI6IEBeG/5+GVfPibjxBqS11VkkgbhBAEkaajO0Nvv0866dJQk6ahOk2oDR09Gbr748YfxliUFDTXpXlw6Ubed+tv6er3Ua5TfCUotmztdw1KH8BaEEqSCSKuvfU3PL16B0Pq0gSRwVV7OiheOGsiV849mRNHNTJmWB0C6M8FrNu6m6dXbeHeRSvZtLOLuqpk3CFeSaorPD5620JcR9JywTTCTOaw+AQ6L/wLFr3ER29bSHWFhyBu2SQE7OrOMHZoLR+76izOnjqaSaMaqEh6WGDza528vHUXv16ymsXLNwx0wgwiw5C6NE+v3sG1t/6G+7/6HpKOxObfs8ygVQCL43nM+8FClry4jaH1FQSRwZGSXV39nHHyKL70gfOZO2P8Xi+KZ/P6mjSjhtRx3ukT+fC7Z/OjB5/j27/8E0pJPEchEKSTLp/+3mNMGdvIyeOaiILwkOxrYyxuwmP1+tf49PceI510B7r5hpFGa8MXbng7N14+i6a6ysKAKVSXaqip4LTJI7n2wlNZsmIjX/npYp5ZvZWGmvh7N9akWPLiNubd+QT/8b8uJMr6JeAUlwaDLkamjcVJJXj82Q3c+dBLNNfFHeIdGXeB/8Blp/Pbr9/A3BnjCYIQ3w/wcz6BH8RXzsf3fXJ+QFNtms/fcC73fuVaaiqTBJHGAglX0dXvc+uPniSy9tB9FgGRtdz6oyfp6vdJuAoLBJGmpjLJvV+5ls/fcC5NtWlyfoDv+wR7jdnP+fh+QBCEzJ0xnt9+/QY+cNnpdPfncKQgjAzNdRXc+dBLPP7sBpxUAl1sU6hEkPvUqiuF6xCdACUFYRDy5buW4blyoHF0d7/PRbMn8Z1b3kXKc/D9AClACvCSCbxkcuByEgkUccf4TM7n3JkT+e/PXjFg80faUF+d4o/LN/PgEy/jJJMH7Q9E2uAkkzz4xMv8cflm6qtT+3zOf3/2Cs6dOZFMzieMNAqLk9h3vF4yMfBdfD8g5Tl855Z3cdHsSXT3+ygp843BJV++axlhEBal6R9QfPna7xpUK4A2Ful5LHtpGy9uaCeddLEW/DBiWEMV37nlMowxhNqgpEA4Do7n0bHiBdb/+If85VvfYNvvHiTYtQs3kQBr8RxFNuczd8YEPn3tHDp74hCoNRZHCX65eC1GH3yIUUqB0ZpfLl6Lo0T+fSWdPRk+fe0c5s6YQDbn4zkKrMVNJAh27WLb7x7kL9/6But//EM6VryA43kIx4knAG0wxvCdWy5jWEMVfhhhLaSTLi9uaGfZS9uQnldeBRhsPkA+IP6rJ9bhhxFVaQ8EdGZ8PnPdHIbUV5PzAxwJQiqizk5euvULbP/trzBhmH+9JD1qFFPn/zvD33kZURDgKInRmhvfdTo/e+TP7O7ux3MUlSmPp1btYOPWXUwc3UgURByIHhgLjueyfssunlq1g8qUN6CwY4bVc+O7TsdonVc4g+N5bP/9Q6ya969ktm6N/RYhkK7LiHe/h2lf/ipOTQ3KaIIwYkh9NTdefjrzfrSIxtoKIH7vXz2xjjkzx+dX3OPbFxhUK4BSksD3WbGujaTnYK3FDyNGNNdw/UWnYo2Ju0IKiY00z334g2y+52c4lVV4dQ14DY149fX4u3bx7Af+nh1/+B2u54ExBJGmoaaS6y48hb5sgJRxC9WejM/zr7SBVBhzYGaQMQak4vlX2ujJ+CglkVLQlw247sJTaKipJIg0GIPreez4w+949gN/j79rF159fTzeugacyio23/MznvvwB7GRBiFRQmCN4fqLTmVEc01+FbAkPYcV69oIfL+cJsEgUgBjQTqK1vZetrb14rkKEGT9iCljmxnSUE2YFybHcdhw5x20PbaY1PARWK2xOsJG8aWSSZx0Bavm/SvZ9nak6yKwWAtnTxsdrwg23kuwFlZtbD+ksa/a2E7BlzY2NoHOnjY6/5hFui7Z9nZWzftXnHQFKpkcGKvVEVZrUsNH0PbYYjbceQeO44AxhJFmSEM1U8Y2k/UjQOC5iq1tvbS29yIdxVGzgkp0oSndjbADvDHWWlCKV1t76OrL4SiJELEjOW3CUCAWLpREhyE7H/k9KpXGav3699IamUqR3bKFjmefQUkJ1iKwTBhRT2NNHFkCcJRg7ZYOwBxw9mX8fMPaLR04qhD2NDTWVDBhRD0iH+pUUtLx7DNkt2xBplJvOmaVSrPzkd+jwxDySgowbcLQ/GZanEPU1Zfj1dYeUOp1DbePKMWWqze4ZNFH8IbSf/Ao+frc/trKZOEfSNfF7+4muz12BO1bmC3WGnrWrgEKE5ilKpUgkTev9nzmoS2ke7/eWkvCc6hKJQA78F161q7B2rcYqzFIzyO7fRt+dzfSdSnsE9RWJvcZr4DiRYGKLl/7XoOuLIrWdmDmG3hvu/f/t6hEAqeikqCz8y1XZiEEbm3tPo+ZNwjVHmpKxOtf//rv4NbW/tXNK2sMTkUlKpHYR+D3n+SNtWh99O/84Z3qDg+DxgcAwFqq0t4+M7RSkpe3xDa6EBIbBCSqqqg6aQo6m0U6bxIIsxbhuNSfPjt/wwQIwda2bjq6sziOzD/NUluZILbWD3C48aiordwjsI4j6ejOsrWtG4TA5t+3/vTZCMd9vTTnkY6DzmapOmkKiaoqbBAgRDzGl7e0Dzi8AytM2nvT9zqeKD0f4GC/iBCgNRNG1DKkLk4BsBY8R7F2czthGOXtbIGxlokf+QQqmUTncgjHifOJhUBIifQ8/NadjHjPVdROnUYUBFgRv/blLbvoy/oDZkukLdMnNsc/5QEKVPx8yfSJzUT5GVlJSV/W5+UtuwCBFYIoCKidOo0R77kKv3Un0vMQUu4Zs+OgczlUMsnEj3wiv3oIHCUIw4i1m9vxHIW15PODKpgwoha0PvqnxootX/tdg2YFEAKiUFNZlWLSyFr8IAIs6YTL6lfbWLZ6C1IpjBDoMKRhxgymf/1bWB0RdHRgggAbRUSZfnI7X6P5vAuYNv+rxKJE/tyA5YHHV8ezqY3NlISrmD6hCTAHnF8j8k7w9AlNJFwVC66Nj18+8PhqrLXxGV/i+zVt/ldpPu8CcjtfI8r0Y6MIEwQEHR1YHTH969+iYcYMdBhihEAqxbLVW1j9ahvphAtY/CBi0shaKqtSRKE+7pPiBo0CQGzbSulw3mmj0Tp/2F1AZAy33780FjhrEVISBgFj3nctb/v17xhx+btJjxyFW1ND7fQZnHzrlznrF/fj1NZijSGy4Hkuy1ZtZuFz66muSGCsxQ81Y4fWMH1SMzYMDyoKZMOQ6ZOaGTu0Bj9/FqG6IsHC59azbNVmPM8lsnn7vraWs35xPyff+mVqp8/ArakhPXIUIy5/N2/79e8Y875rCYMgXh1s/P1vv38pkTH5xUKgteW800YjpfM6P+N4ZFDtBCspQYdcOWcS3/zlc/ihRklBTUWCRcs38MuFf+aaC08lm/NxHUUYBNTPOI2GO3+K39eHyWXxGptQQKQ1RBHagqMU/VmfL/5w4UD0xFGSXd1ZPvqu6dTUVB3UKTEhIAw1NTVVvPttE/jaL55laH0FOp/P/8UfLuR/vnEDCddBG4OKIpCSEz95CxM/eQvBrnZkMkWishILA8IfRppUMsEvF/6ZRcs3UJNXWK0NjbUprpwzCXR4yNGrwUBphUEPMRlOCAiDiKFDarnu/JPo2SsRLOkpPveDR1jx8nZSyQRaGwyxfR36Pk46jdfYhA1DQt+PZ34TmziOo/jCHY/w7Jpt+XSFePYf3lDJ9RefjI0OPh1aSoGNQq6/+GSGN1TihxprLZUpj2fXbOMLdzyC4ygSriIyFmtMPL4wxGtswkmnCX2fKAgwCLQ2pJIJVry8nc/94BGSnhpICOzp97nu/JMYOqSWMIiKZP6UgJztdZWeE3yIq7IUAhNGfOra2YwfVkvWj+JwplIEYcSVn/85dz+ygkTCI+G5CCkxQhIGIWHORxuLlRLXUSQTHjs7+njfl+7hrodX0FAbnwJzlKSrN8fNV5/GhNFD4vMABylNUgiiIGTC6CHcfPVpdPXGm3iRNjTUprnr4RW870v3sLOjj2TCw3UUVkq0sYQ5nzAIMUIipCThuSQSHnc/soIrP/9zgjDCVQoh4h3x8cNq+dS1szFhVLySKcWWrf2uQbcGCgE60tTVVnD7zefjBxHGWCxxZmcQRXzy2w/y3i/ezeMvbMBYSHguyWSCZDJBIuHhuS7bd/XyH/c8wXmf+BF/fOYVaioSRNrgOpLWzgzvOnsiH716FmH20E+EKSUJsxk+evUs3nX2RFo7M7hOrAQ1FQn++MwrnPeJH/Ef9zzB9l29eG4s6ANj9lyMhcdf2MB7v3g3n/z2gwRRFEd+iOsg+UHE7TefT11tBToqO78FBpUPUEBJQZj1OWfmOL73zxfysdsWUpn2EDK25920YuFz63nshQ1MGTuEE0Y1MnlMEwjo6c/x4vpW1m5uY1t7D5Upj5rKFNoYPCe2++dMG8H3P3MxGHNA2Z9vhYwP8/L9z1xM57zf8vTqHTTWpAgjQ01lis7eLPN/spgfP/gck8c0c8rEIVRXJMHC2s3tvLJ1F2s2tRLp2IkuJHpaA32ZgO/984WcM3McYdYv4i5w6TEoFQD2KMF1l0wH4GO3LSThOaQSsUNZkxeSNZvaWLn+tYHd2NhckiQTDo016dgkwqKUoLWjnzmnjOTeL19BTYUXpz8fJmESQmAiTV1lgnu/fAXvu/U3PPniNprq0lhrcR1FY02a7v4cS1ZsZNHy9Xs2z1RssqUT3kB5FCUlWT/CDyK+988Xct0l0wmz2bLw74dTKpGwgUM6h/E9YyXIct0l0xjRVMkn/3Mxr77WTVWFh3LiwlIVSReEt1/+EEBcTEsIyORCwkjzoXedylduOoeKhHNYhb+AlIIoiKhOe9z/7+/hS3c+wU9//2Is3EkXS7yx5znOPiaM3TPofKjT0NWbZdywGr5z8/nMnTmuZIR/n8N/JcCgL4xVWAnmzhzHo9+5lm/94hl++ehadnVlUUqS9BSuk68MlzcbIm0Iw7hWkOcqpk1o4l/ffyYXnDEBG4bo8PALfwEpBTqMqPAk3775Qi49azz//rNlvLShnSDUJD0H15VxyLVg5lhLGBlygR4Idf7De2bwqWvPoKGuooTMnsMY7ThMDFoTaG8KStBQleCrHz2Pj181k9888QqPrdjCy9s6ae/M4Id6YKOstjLJhBFVnDqxmSvnTOKc6SNRnpuvpnDk64PGxyQNNvK54IwJnDtjNE+s3Mavn1zHn9e3sb2tl66+XJwrlN+NbqpLc+LIOs6dMZorzjmB4UNqIIpKSPhLk+NCASBWAh1pbKgZ3ljJR1tm89GrZ9LdnWXjji56M8FA0ayxQ2sY1liJk0wABuOHRFn/qJYWHNjFzn/uubPGcu6s8UQ5n9d29bFpZ3e8Wpg4AXD88FpqalJx9WgdDShrWfjfmuNGAWCPUOkwQvvx5lVNhceMKcPZp9S4iRUlzGYBgZKiaHU1C58bZgPA4kjJqOE1jBpZv2e8WAgjIj/EmKCo4z3WKL3+AEdhPEKIgRNYWltsFOzzsTIup1xSqQLxTC4wAEGEsdHA3wrVn6UQSFXCgl96LsDxtQK8EYUksWMFAbFyHjtDLmlKZ4orU6YIlGAYtFTGU+bIUFr3ufR8gDKDm9KS/7IJVOb4ZtBVhShT2pTYAlBeAcoc35QVoMxxjVMyaXn5FMFyeLv0OaR9kxJLBy25FSDSJl8CsDR+oDL7YS1RGBR7FIeNklEAi0VKyYbW3fT19RBF+fIeZUoGAWAtuWwvvu9j7YHXQio1SkjCLI4UtPX00dvfh4mCY/7HHXQIgTGaKPSJouivP/8YoGQUwBhIOA5b2rvYtLOVMNsN4iiX7y7zplhASoWf7aO/rws/iM2gY/3+lFRZlEJdzL9sayPT3YoxpuwUlwrWgpT0dLWSzfQThRHyYEzUEpCzvS/JwEnc4l8WgxCWpa9sord7F36uHyHVgf/IZQ47ArBG09O5k77+frTWB2miFl/O9rqsRJTOJGutpcJzeW79FlZt3ER/5zaELJtBxcZai3Rcejvb6O5oJZPJIvJnkY9pBEIaa3sL/n2xx2MsSKXo6s9w39KV9O7aQi7bf3BLbZnDRkE62l9bT09PN37OH+g9cIxi82Xye6UwrIkPV8cKXcwLC9oYqpJJ/vjntSxds5ae9g1QXgWKhrUG6Xp0tG+ho30b3d29B19VrsjytddlEQJhWCMteIf1FztUbHwONusH/HDhMtq2r6N79w6U4/JWPbLKHH6stSjlkuvvZvurK9nd0YGfyw2a8LQFTwrECmRpGXTGWKpSSZaufZUfLVxKz47V9Pd1o1RZCY4W1lqkVIRRwJZ1y9m9q43urm7kYOgtHHceQSBWSCNYUwLm/+vQxlCdTvDjxcv4v4uepHv7S/hBrqwER4GC8Buj2br+edpe28KuXR3FHtZhxmIEaxxh7UsYA6LQK6CEsJBQgq89sAiA/++ikJoRU6muG4IJfSzH1oH20iduBq4cjyDXz6ZXnqFt5xZ2trajdXTIv7V4XRiySAgkxiCsfcnR2HVoeoUQVXkzqGQkKhZwScpz+doDizHGcv25WfyhJ1A3ZByOUpgoLCvCIbKno6YDUtK9ewdbN7xA5+52WlvbiaLwsETiImNLQf4tQgijba/GrnO6n3xxc8OcU1YLKc+0kbGlJkk23+sq7Tl87VeLeHlHO5+89BzG9O+ionEsFdXNKCWxRmOtKZUs22MGKSVSuQBk+jrY9dpG2ndupGP3bjo6ugB7yMJvbVzXaGtnD5E2SA+K0Ka4MBgrlBRos7r7yRc3O8RpOEsdKc+0aEMJ5QcVsPlzAlWpBL9a+mde3LSD6885jQtPncKIEWNI1w4nWdmIl0gipdoTUy3zJsTtVbGGMMjR37uTno7X6GjfSk93J52dPWQyhcYfhz4fCuJ72NaTKYXGHEZIKbXWSwHjACjEYmvsLVC6uxsWsMZSk06xtb2D+fc+zH1Pr+Q9Z0zjzMnjGNk8BC9VTbqyFi9ZiZdIl53lN0AISZDrJwiyBLk++np209/bRV9/H/19GTKZLNYaHOfw7b0oKcgEERvaOnCkxBT1tghpjUUhFkNcGU4IGS7REa1CiCGl5gfsj9aGhOOQdF3W72jj/9y/kMp0ipsvOZs5k8cSYkkmkjiuO7BylIkp+Eo6iggCnzAMyeUCgiAgCEIK5o4QB970+80wQMJRbO/oobW7H1cVdVPTIoQ0kW5VKlwCCIe5c1X7kiV9DX93ysNCyRtsqDVClHTJRJPP30u6Dk5C0tmf4fcvrGbqkBr6gxBHOeXisG+BzbdMtXlTUQgR+1FHQDCtsXhSsvzVHfQHAVVJD2OKpADWauE4isg83L5kTR9z5zoDgi4091vH/oMtYTNof6y1BFpTkfR4ubWTzR09jKqvJhdGRV5mS5tCleyCc2sLeTBHAEcK+vyAZRu34yqVb1hYLIQEK4Tm/sIjkiVLIkAkbXqxicxGVN47OoZQUtCb9XnkpQ35JbZwk8vXG10FjqTgA2hjSSc8ntm4g827u0m4qpjRT4MSwkRmY9KmFwOCJUuieAqYO1dtW7YsK+AuIaXAHFshFG0sFQmXp9dvZe1r7aQ9JzaTyhQNCzhK0J3N8buV6+KJqVimD4DBCimFgLu2LVuWZe5cBYWQ55IlGhCBcr9nQ70bKSVxc8S3OEtQWpdE4Iea+575CyXtxR8nGGOo8Dzuf+4vbN7VRdJRe6LTR/+ySCltqHcHyv0e8eyvYU/M39LSIvuWPL/LYr8rlBTHWgzR2HgVeHFrK79+fi016SS67AgUhcgYatNJ/rRuC398aQNVyQS6mLO/tVooKSz2u31Lnt9FS0vcIpR9J0oBUHX+rHo3l1uLEPVYG7clOYbmUwH4keaD55zKxdMm0J0pN4k7mkTGUJ1M8MrO3Xzj90+TCyOcgQjT0b4PNv6fuANoZ5hMnNC7+LmOvf8o93l2S4vsXfzcbgvfE46UWKv3PPfYuTxH8qMlL/DISxuoTScw1pZTJI4CkTHUppJ54X+KTBDi7hNePdqywMDsj7W39S5+bvfesz+8XiUF8xB1T82sEtngeYQYF8cTj53QKOR3+S3kwogPnjODS06ZQCaIiLQprwZHAGMtUggqEx7Pb3qN7y9+jn4/JOGq4sX8AbBGSCWN0a90dplptKyJmL+3drw+78eypkV0Lnq+G+xHhJQSK465udPaWLNTrsOPl7zADxY/T6QN1an48Js25RXhcGCsHfC9pBD88plVfON3T5ENIhJOsYUfsMIACCM+xpo1AWtaCq1AB3jj6bClRbFgga47e9pPpKM+YMNII8QxV5+k0D2xzw8YVV/DZadO4syJI6lIuORCTah1fs9gT/O5Mm+CjYMphRCbIyVJ1yEyhlXb2njgub+wZkc7VUkPEMU/YGhtJDzHMWH0/c6nV32sINP7P+3N7rhgHmLI06ekwn77IlKMQxt7rJYCkFIQhBo/0kxoruOCqeOZNrKZ5uoKlJQYa4i0RRtT1oE3IK6JJXCkRMpYuLszPiu3tPLUui28uLUtXnE9p7jRngLWaqGUssa+JPDftnvEKRkWLHjDistvlvNjAdG68MX++tnTrsflaSsGSqcccyKijcVxFK6j2LK7m/9+9HlqK5KcNKyR8c11jKirorEqTW06GS/bx9w3PLJIIcgEIe09GXZ09fLya7t4dVcXO7v68mc14vMEUUkIPxYphbUmg+H6jmUv9zLvmn0c371561tdMIXOmHKTcJ0f2shECNRffV0JU8iDibTBDzXGWpSMb2LKc4u/dJcgQkCoDb1ZH53/fTxH4anYKi6hXXcLREJJV4fRB7qfWfP/v5npU+CvC/LcuQ5LlkR1Z039tnSdm00YhiDcwznqYlDwD8i7Rdra4jttJYzI2/0FLKUYSLChdF3XhOH8zqWr/zczZ7o8/3z4Vq/4W2Zywdy5iiVLotqzpv5Qus5NNgijUk+ZPhiO2WXtKFFy8r431kbCcx0TRnd2LV31ocLE/dde9rfec8E8BPMx9WdN/SGuusmG0aBYCcoMBmwoXMcl1Hd2LF31IeYh94/3vxl/a1THMh9LS4vqWLrqQwT6TuG4LhZNIb27pKeHMoOKPRvLFouWrusS5IW/pUX9rcIPB77qD6wEdWdN/bYQ8mZrjCXulXPM7ROUOYaxViOlEkKAMf+7Y9mq+Qcy8xc4GLNX0NIiC9EhpPy+EMKxceWkQecXlClBrI2EUo4V9IrQ3tzx7Kqf5KM9B9xd8eD9vkJ06MyT34YQPxVKTsrvGAtKsLRKmUFAPkVfuI60xqwwJrqxe9naF/6WaM+bcfCCumRJREuL6ly2+qkois7CmF8Kx1FCCom1EWWvoMzhw8azvpRCKWm1vV0Szu1etvYF5s51Dlb44XBE/vbaaKg76+RrsGK+UPIEG+nYTovTJ8oRxjIHg83b+o5QErRZbYX9VOfS1Y/k/y6JK68cNIdLMPf4BTPH1+CkbkFws1CqxpQVocyBY7DWiLzgG63bsNze1Wu/wZo1wcHa+2/E4RXIvVaDqrOnnaiM+ZxFXCWVrLbagMm3gBeUlaHM/pjYxhcSJaSQEqt1q7XcESF+0P/MqlYAWlAs4E1TGw6UIyGEAzvHAPWzp4000v4j2BuFlCMBrDFgrGZAGYQ4QmMpU7pYsCa/jySRUgol8o+atdZy776Cf/hm/b05kkInaWkRhRWh4ewTq3Qkz7NC/KNAnCuUrATA2lghbP4HiYclBt6jrBbHJoW84Vhc8/e1cFQJiUAIWZj7LFab7QixEGN+01UfPszD632gEG3UHKGgytEQrwH/oPBA/expI7W0s4Q2l1rBbARjpBDVA3Kfz7Iqah2ZMocNIfPZyPHhdIgTD3uEYDWIpUgeVzJ6fPfTL/cOvOgIzfivG9uRfPPXfVZLi4QF7GPDtbSo2m2rRgqtphrMmUKIZqydgcUBe0p5h/mYxSIQ1tArhF2bL8m+Qhi7UQixwijzctfSv2ze5xVz5zo0N9ujIfgF/h/KrWYtIudU7QAAAABJRU5ErkJggg==">
+<style>
+/* Sizes are deliberately generous. The board scales to fit, but the controls
+   never shrink below a comfortable target for an unsteady thumb. */
+:root {
+  --felt-top: #216048;
+  --felt-bottom: #10362a;
+  --ivory: #fdf8ec;
+  --ivory-edge: #cdbf9d;
+  --ivory-side: #a99a78;
+  --ink: #23282f;
+  --gold: #e0b552;
+  --panel: #10241c;
+  --tw: 62px;   /* tile width  */
+  --th: 84px;   /* tile height */
+  --depth: 7px; /* thickness of the visible tile side */
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0; height: 100%; overflow: hidden;
+  background: var(--felt-bottom);
+  color: #f4efe3;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-user-select: none; user-select: none;
+  overscroll-behavior: none;
+}
+
+#app {
+  position: fixed; inset: 0;
+  display: flex; flex-direction: column;
+  background: radial-gradient(120% 90% at 50% 0%, var(--felt-top), var(--felt-bottom));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* ---- top bar ---------------------------------------------------------- */
+#topbar {
+  flex: none; display: flex; align-items: center; gap: 14px;
+  padding: 10px 14px; font-size: 15px;
+  background: rgba(0, 0, 0, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.stat { display: flex; flex-direction: column; line-height: 1.15; }
+.stat b { font-size: 19px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; opacity: 0.62; }
+#topbar .spacer { flex: 1; }
+
+/* ---- board ------------------------------------------------------------ */
+#stage { flex: 1; position: relative; overflow: hidden; }
+#board {
+  position: absolute; top: 0; left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.tile {
+  position: absolute;
+  width: var(--tw); height: var(--th);
+  border-radius: 9px;
+  background: linear-gradient(150deg, var(--ivory-edge), var(--ivory-side));
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.42);
+  cursor: pointer;
+}
+.tile .face {
+  position: absolute;
+  inset: 0 var(--depth) var(--depth) 0;   /* offset up-left, exposing the side */
+  border-radius: 8px;
+  background: linear-gradient(155deg, #fffdf6 0%, var(--ivory) 55%, #f2e9d4 100%);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.tile .face svg { width: 100%; height: 100%; display: block; }
+
+/* A tile that cannot be picked up yet is dimmed rather than hidden, so the
+   board still reads as one object. */
+.tile.blocked .face { filter: brightness(0.9) saturate(0.85); }
+.tile.blocked::after {
+  content: ""; position: absolute;
+  inset: 0 var(--depth) var(--depth) 0;
+  border-radius: 8px; background: rgba(16, 40, 30, 0.15);
+}
+
+.tile.selected .face { box-shadow: inset 0 0 0 4px var(--gold); }
+.tile.selected { transform: translateY(-2px); }
+
+.tile.hinted .face { animation: hintPulse 0.9s ease-in-out infinite; }
+@keyframes hintPulse {
+  0%, 100% { box-shadow: inset 0 0 0 4px rgba(120, 200, 255, 0.35); }
+  50%      { box-shadow: inset 0 0 0 4px rgba(120, 200, 255, 1); }
+}
+
+.tile.nope { animation: nope 0.32s ease; }
+@keyframes nope {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-4px); }
+  75%      { transform: translateX(4px); }
+}
+.tile.nope .face { box-shadow: inset 0 0 0 3px #d05a4e; }
+
+.tile.gone { animation: vanish 0.26s ease forwards; pointer-events: none; }
+@keyframes vanish {
+  to { opacity: 0; transform: scale(0.68); }
+}
+.tile.hidden { display: none; }
+
+/* ---- bottom controls -------------------------------------------------- */
+#controls {
+  flex: none; display: flex; gap: 8px; padding: 10px 12px 12px;
+  background: rgba(0, 0, 0, 0.26);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+button {
+  font: inherit; color: inherit; cursor: pointer;
+  border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.09);
+  transition: background 0.12s, transform 0.06s;
+}
+button:active { transform: scale(0.96); background: rgba(255, 255, 255, 0.18); }
+button:disabled { opacity: 0.34; cursor: default; }
+button:disabled:active { transform: none; }
+
+#controls button {
+  flex: 1; min-height: 54px; padding: 6px 4px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  font-size: 13px; font-weight: 550;
+}
+#controls button .glyph { font-size: 20px; line-height: 1; }
+#controls button .count { font-size: 10px; opacity: 0.6; }
+
+/* ---- overlays --------------------------------------------------------- */
+.overlay {
+  position: absolute; inset: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; background: rgba(6, 20, 15, 0.82);
+  backdrop-filter: blur(3px);
+}
+.overlay[hidden] { display: none; }
+.sheet {
+  width: 100%; max-width: 420px; max-height: 100%; overflow-y: auto;
+  background: var(--panel); border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px; padding: 22px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+.sheet h1 { margin: 0 0 4px; font-size: 25px; font-weight: 650; }
+.sheet h2 { margin: 22px 0 10px; font-size: 12px; letter-spacing: 0.1em;
+            text-transform: uppercase; opacity: 0.6; font-weight: 600; }
+.sheet p.lede { margin: 0 0 6px; opacity: 0.75; font-size: 15px; line-height: 1.45; }
+
+.choice {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 14px 16px; margin-bottom: 8px; text-align: left;
+}
+.choice .body { flex: 1; }
+.choice .name { font-size: 17px; font-weight: 600; }
+.choice .desc { font-size: 13px; opacity: 0.66; margin-top: 2px; line-height: 1.35; }
+.choice .best { font-size: 12px; opacity: 0.85; color: var(--gold);
+                white-space: nowrap; font-variant-numeric: tabular-nums; }
+.choice[aria-current="true"] { border-color: var(--gold); background: rgba(224, 181, 82, 0.14); }
+
+.wide-btn {
+  display: block; width: 100%; min-height: 52px; margin-top: 8px;
+  font-size: 16px; font-weight: 600; padding: 12px;
+}
+.wide-btn.primary { background: var(--gold); color: #26200e; border-color: transparent; }
+
+.toggle { display: flex; align-items: center; justify-content: space-between;
+          width: 100%; padding: 14px 16px; margin-bottom: 8px; font-size: 16px; }
+.toggle .state { font-size: 14px; font-weight: 600; color: var(--gold); }
+
+/* Nudge to turn the phone sideways, shown only when it would genuinely help. */
+#rotate-hint {
+  position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%);
+  z-index: 500; display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 999px; font-size: 14px;
+  background: rgba(6, 20, 15, 0.9); border: 1px solid rgba(255, 255, 255, 0.16);
+}
+#rotate-hint[hidden] { display: none; }
+#rotate-hint .glyph { font-size: 18px; }
+
+#toast {
+  position: absolute; left: 50%; top: 16px; transform: translateX(-50%);
+  z-index: 800; padding: 11px 20px; border-radius: 999px; font-size: 15px;
+  background: rgba(6, 20, 15, 0.93); border: 1px solid rgba(255, 255, 255, 0.16);
+  opacity: 0; transition: opacity 0.25s; pointer-events: none;
+}
+#toast.show { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tile.gone, .tile.nope, .tile.hinted .face { animation: none; }
+  .tile.gone { opacity: 0; }
+}
+
+body, .tile, button { touch-action: manipulation; }
+
+/* A phone held sideways has very little height to spare, and the turtle needs
+   all of it. Float the readouts and controls over the felt -- in landscape the
+   board never fills the width anyway, so the space is free. */
+@media (orientation: landscape) and (max-height: 560px) {
+  #app { display: block; }
+  #topbar {
+    position: absolute; top: 0; left: 0; right: 0; height: 38px;
+    padding: 3px 14px; gap: 12px; background: none; border: 0; z-index: 400;
+  }
+  #topbar .stat { flex-direction: row; align-items: baseline; gap: 6px; }
+  #topbar .stat b { font-size: 16px; }
+  #topbar .stat span { font-size: 10px; }
+  #stage { position: absolute; top: 38px; left: 0; right: 98px; bottom: 0; }
+  #controls {
+    position: absolute; right: 8px; top: 42px; bottom: 8px; width: 88px;
+    flex-direction: column; gap: 6px; padding: 0;
+    background: none; border: 0; z-index: 400;
+  }
+  #controls { justify-content: center; }
+  #controls button { flex: 0 0 auto; min-height: 56px; font-size: 12px; }
+  #controls button .glyph { font-size: 17px; }
+}
+
+/* Deepen the shadow with height, so a four-level stack reads as a stack. */
+.tile[data-z="1"] { box-shadow: 0 3px 7px rgba(0, 0, 0, 0.42); }
+.tile[data-z="2"] { box-shadow: 0 4px 9px rgba(0, 0, 0, 0.46); }
+.tile[data-z="3"] { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.50); }
+.tile[data-z="4"] { box-shadow: 0 8px 17px rgba(0, 0, 0, 0.55); }
+
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <div class="stat"><b id="stat-layout">Turtle</b><span>Board</span></div>
+    <div class="spacer"></div>
+    <div class="stat"><b id="stat-left">144</b><span>Tiles left</span></div>
+    <div class="stat"><b id="stat-time">0:00</b><span>Time</span></div>
+  </div>
+
+  <div id="stage">
+    <div id="board"></div>
+    <div id="rotate-hint" hidden><span class="glyph">&#8635;</span> Turn sideways for bigger tiles</div>
+    <div id="toast"></div>
+  </div>
+
+  <div id="controls">
+    <button id="btn-undo"><span class="glyph">&#8630;</span>Undo</button>
+    <button id="btn-hint"><span class="glyph">&#128161;</span>Hint</button>
+    <button id="btn-shuffle"><span class="glyph">&#9862;</span>Shuffle<span class="count" id="shuffle-count"></span></button>
+    <button id="btn-menu"><span class="glyph">&#9776;</span>Menu</button>
+  </div>
+
+  <!-- Menu ------------------------------------------------------------- -->
+  <div class="overlay" id="menu" hidden>
+    <div class="sheet">
+      <h1>Mahjong</h1>
+      <p class="lede">Match two identical tiles that are free to lift. A tile is free when nothing sits on top of it and one long side is clear.</p>
+      <h2>Choose a board</h2>
+      <div id="layout-list"></div>
+      <h2>This game</h2>
+      <button class="wide-btn primary" id="btn-resume">Keep playing</button>
+      <button class="wide-btn" id="btn-restart">Start this board again</button>
+      <h2>Settings</h2>
+      <button class="toggle" id="btn-sound">Sound<span class="state" id="sound-state">On</span></button>
+      <button class="toggle" id="btn-showfree">Dim the tiles you can&rsquo;t lift<span class="state" id="showfree-state">On</span></button>
+    </div>
+  </div>
+
+  <!-- Win -------------------------------------------------------------- -->
+  <div class="overlay" id="win" hidden>
+    <div class="sheet">
+      <h1>Board cleared</h1>
+      <p class="lede" id="win-detail"></p>
+      <button class="wide-btn primary" id="btn-again">New game</button>
+      <button class="wide-btn" id="btn-win-menu">Choose another board</button>
+    </div>
+  </div>
+
+  <!-- Stuck ------------------------------------------------------------ -->
+  <div class="overlay" id="stuck" hidden>
+    <div class="sheet">
+      <h1 id="stuck-title">No moves left</h1>
+      <p class="lede" id="stuck-detail"></p>
+      <button class="wide-btn primary" id="btn-stuck-shuffle">Shuffle the tiles</button>
+      <button class="wide-btn" id="btn-stuck-undo">Take back my last move</button>
+      <button class="wide-btn" id="btn-stuck-new">Start a new game</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Board layouts.
+ *
+ * Coordinates are in tile units: every tile occupies exactly 1x1, and a
+ * position is the tile's top-left corner. Half-unit offsets are legal --
+ * the turtle's tail and head sit between two rows, which is what gives the
+ * classic layout its silhouette. `z` is the stacking level, 0 = table.
+ */
+(function (global) {
+  'use strict';
+
+  function rect(x0, y0, w, h, z, out) {
+    for (var dy = 0; dy < h; dy++) {
+      for (var dx = 0; dx < w; dx++) out.push({ x: x0 + dx, y: y0 + dy, z: z });
+    }
+    return out;
+  }
+
+  // Rows of the given widths, each centred against the widest row.
+  function centredRows(widths, z, out) {
+    var max = Math.max.apply(null, widths);
+    widths.forEach(function (w, row) {
+      var x0 = (max - w) / 2;
+      for (var i = 0; i < w; i++) out.push({ x: x0 + i, y: row, z: z });
+    });
+    return out;
+  }
+
+  function turtle() {
+    var t = [];
+    // Body: eight rows, centred on a twelve-wide span starting at x = 1.
+    [12, 8, 10, 12, 12, 10, 8, 12].forEach(function (w, y) {
+      var x0 = 1 + (12 - w) / 2;
+      for (var i = 0; i < w; i++) t.push({ x: x0 + i, y: y, z: 0 });
+    });
+    t.push({ x: 0, y: 3.5, z: 0 });   // tail
+    t.push({ x: 13, y: 3.5, z: 0 });  // head
+    t.push({ x: 14, y: 3.5, z: 0 });  // nose -- the one tile that is always free
+    rect(4, 1, 6, 6, 1, t);
+    rect(5, 2, 4, 4, 2, t);
+    rect(6, 3, 2, 2, 3, t);
+    t.push({ x: 6.5, y: 3.5, z: 4 }); // capstone, straddling the 2x2 below it
+    return t;
+  }
+
+  function pyramid() {
+    var t = [];
+    rect(0, 0, 8, 8, 0, t);
+    rect(1, 1, 6, 6, 1, t);
+    rect(2, 2, 4, 4, 2, t);
+    rect(3, 3, 2, 2, 3, t);
+    return t;
+  }
+
+  function garden() {
+    return centredRows([6, 8, 10, 10, 10, 10, 10, 10, 8, 6], 0, []);
+  }
+
+  var LAYOUTS = [
+    {
+      id: 'garden',
+      name: 'Garden',
+      blurb: 'One flat layer. Nothing is buried — a gentle game.',
+      build: garden
+    },
+    {
+      id: 'pyramid',
+      name: 'Pyramid',
+      blurb: 'Four levels, tall and narrow. Fits an upright phone.',
+      build: pyramid
+    },
+    {
+      id: 'turtle',
+      name: 'Turtle',
+      blurb: 'The classic 144-tile board. Best played sideways.',
+      build: turtle
+    }
+  ];
+
+  LAYOUTS.forEach(function (l) {
+    var slots = l.build();
+    l.slots = slots;
+    l.count = slots.length;
+    var xs = slots.map(function (s) { return s.x; });
+    var ys = slots.map(function (s) { return s.y; });
+    l.width = Math.max.apply(null, xs) + 1 - Math.min.apply(null, xs);
+    l.height = Math.max.apply(null, ys) + 1 - Math.min.apply(null, ys);
+    l.originX = Math.min.apply(null, xs);
+    l.originY = Math.min.apply(null, ys);
+    // Rough shape hint, used to nudge the player to rotate the phone.
+    l.wide = l.width / l.height > 1.15;
+  });
+
+  global.Layouts = {
+    all: LAYOUTS,
+    byId: function (id) {
+      for (var i = 0; i < LAYOUTS.length; i++) if (LAYOUTS[i].id === id) return LAYOUTS[i];
+      return LAYOUTS[0];
+    }
+  };
+})(window);
+
+/* The 144-tile set, and the artwork for each face.
+ *
+ * Every face is drawn as inline SVG rather than shipped as an image: the app
+ * stays a few tens of kilobytes, the tiles stay sharp at any size, and there
+ * are no assets to lose. Suit pips are generated from row patterns; the
+ * honour, flower and season tiles use their traditional characters, which
+ * Android renders with its bundled Noto CJK font.
+ */
+(function (global) {
+  'use strict';
+
+  var CJK_NUM = ['一', '二', '三', '四', '五',
+                 '六', '七', '八', '九'];
+  var ORDINAL = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+
+  var INK = '#2b3038';
+  var RED = '#b3251f';
+  var GREEN = '#22683a';
+  var BLUE = '#1c4f86';
+
+  // Pip arrangements, row by row. Traditional where it matters, legible always.
+  var PIN_ROWS = { 1: [1], 2: [1, 1], 4: [2, 2], 5: [2, 1, 2], 6: [2, 2, 2],
+                   7: [3, 2, 2], 8: [2, 2, 2, 2], 9: [3, 3, 3] };
+  var SOU_ROWS = { 2: [1, 1], 3: [1, 2], 4: [2, 2], 5: [2, 1, 2], 6: [3, 3],
+                   7: [1, 3, 3], 8: [4, 4], 9: [3, 3, 3] };
+
+  var BOX = { x: 13, y: 15, w: 74, h: 102 };  // drawable area inside the face
+
+  // Lay out `rows` of pips on a shared column pitch so columns line up
+  // between rows of different lengths.
+  function grid(rows) {
+    var maxCount = Math.max.apply(null, rows);
+    var pitchX = BOX.w / maxCount;
+    var pitchY = BOX.h / rows.length;
+    var pts = [];
+    rows.forEach(function (count, r) {
+      var x0 = BOX.x + (BOX.w - count * pitchX) / 2;
+      for (var c = 0; c < count; c++) {
+        pts.push({ x: x0 + pitchX * (c + 0.5), y: BOX.y + pitchY * (r + 0.5) });
+      }
+    });
+    return { pts: pts, pitchX: pitchX, pitchY: pitchY };
+  }
+
+  function dot(x, y, r) {
+    return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r.toFixed(1) +
+           '" fill="#fbfbfb" stroke="' + BLUE + '" stroke-width="' + Math.max(1.4, r * 0.34).toFixed(1) + '"/>' +
+           '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (r * 0.36).toFixed(1) +
+           '" fill="' + RED + '"/>';
+  }
+
+  function pinFace(n) {
+    if (n === 3) {  // the three of circles runs on the diagonal
+      var out = '';
+      var step = 30;
+      for (var i = 0; i < 3; i++) out += dot(28 + step * i, 32 + step * i, 15);
+      return out;
+    }
+    var g = grid(PIN_ROWS[n]);
+    var r = Math.min(g.pitchX, g.pitchY) * (n === 1 ? 0.62 : 0.40);
+    return g.pts.map(function (p) { return dot(p.x, p.y, r); }).join('');
+  }
+
+  function stick(x, y, w, h) {
+    var x0 = x - w / 2, y0 = y - h / 2;
+    return '<rect x="' + x0.toFixed(1) + '" y="' + y0.toFixed(1) + '" width="' + w.toFixed(1) +
+           '" height="' + h.toFixed(1) + '" rx="' + (w * 0.42).toFixed(1) + '" fill="' + GREEN + '"/>' +
+           '<rect x="' + x0.toFixed(1) + '" y="' + (y0 + h * 0.32).toFixed(1) + '" width="' + w.toFixed(1) +
+           '" height="' + Math.max(1, h * 0.07).toFixed(1) + '" fill="#0f3d20" opacity="0.75"/>' +
+           '<rect x="' + x0.toFixed(1) + '" y="' + (y0 + h * 0.62).toFixed(1) + '" width="' + w.toFixed(1) +
+           '" height="' + Math.max(1, h * 0.07).toFixed(1) + '" fill="#0f3d20" opacity="0.75"/>';
+  }
+
+  function souFace(n) {
+    if (n === 1) {  // a single tall stalk, in place of the traditional bird
+      return stick(50, 66, 22, 84) +
+             '<circle cx="50" cy="30" r="9" fill="' + RED + '"/>';
+    }
+    var g = grid(SOU_ROWS[n]);
+    var w = g.pitchX * 0.36, h = g.pitchY * 0.74;
+    return g.pts.map(function (p) { return stick(p.x, p.y, w, h); }).join('');
+  }
+
+  function text(str, x, y, size, fill, weight) {
+    return '<text x="' + x + '" y="' + y + '" font-size="' + size + '" fill="' + fill +
+           '" font-weight="' + (weight || 600) + '" text-anchor="middle" dominant-baseline="central"' +
+           ' font-family="Noto Sans CJK SC, Noto Sans SC, Noto Serif CJK SC, Source Han Sans, sans-serif">' +
+           str + '</text>';
+  }
+
+  function manFace(n) {
+    return text(CJK_NUM[n - 1], 50, 43, 42, INK) +
+           text('萬', 50, 92, 40, RED);
+  }
+
+  // Every distinct face in the set, in a stable order.
+  var FACES = [];
+  function add(id, group, label, svg) {
+    FACES.push({ id: id, group: group, label: label, art: svg });
+  }
+
+  for (var n = 1; n <= 9; n++) {
+    add('pin' + n, 'pin' + n, ORDINAL[n - 1] + ' of Circles', pinFace(n));
+    add('sou' + n, 'sou' + n, ORDINAL[n - 1] + ' of Bamboo', souFace(n));
+    add('man' + n, 'man' + n, ORDINAL[n - 1] + ' of Characters', manFace(n));
+  }
+
+  [['east', '東', 'East Wind'], ['south', '南', 'South Wind'],
+   ['west', '西', 'West Wind'], ['north', '北', 'North Wind']
+  ].forEach(function (w) {
+    add('wind_' + w[0], 'wind_' + w[0], w[2], text(w[1], 50, 66, 62, INK));
+  });
+
+  add('dragon_red', 'dragon_red', 'Red Dragon', text('中', 50, 66, 62, RED));
+  add('dragon_green', 'dragon_green', 'Green Dragon', text('發', 50, 66, 58, GREEN));
+  add('dragon_white', 'dragon_white', 'White Dragon',
+      '<rect x="20" y="26" width="60" height="80" rx="6" fill="none" stroke="' + BLUE + '" stroke-width="5"/>' +
+      '<rect x="30" y="36" width="40" height="60" rx="3" fill="none" stroke="' + BLUE + '" stroke-width="2" opacity="0.5"/>');
+
+  // Flowers and seasons are bonus tiles: any flower matches any other flower,
+  // and likewise for seasons. The coloured bar along the foot of the tile is
+  // the visual cue for that, so the rule is readable without being told.
+  [['plum', '梅', 'Plum'], ['orchid', '蘭', 'Orchid'],
+   ['chrys', '菊', 'Chrysanthemum'], ['bamboo', '竹', 'Bamboo']
+  ].forEach(function (f) {
+    add('flower_' + f[0], 'flower', f[2] + ' (flower)',
+        text(f[1], 50, 60, 54, GREEN) +
+        '<rect x="24" y="104" width="52" height="7" rx="3.5" fill="' + GREEN + '"/>');
+  });
+
+  [['spring', '春', 'Spring'], ['summer', '夏', 'Summer'],
+   ['autumn', '秋', 'Autumn'], ['winter', '冬', 'Winter']
+  ].forEach(function (s) {
+    add('season_' + s[0], 'season', s[2] + ' (season)',
+        text(s[1], 50, 60, 54, BLUE) +
+        '<circle cx="42" cy="107" r="4" fill="' + BLUE + '"/>' +
+        '<circle cx="58" cy="107" r="4" fill="' + BLUE + '"/>');
+  });
+
+  var BY_ID = {};
+  FACES.forEach(function (f) { BY_ID[f.id] = f; });
+
+  /* The full deck as a list of 72 pairs. Suits and honours contribute four
+   * copies each (two pairs); the four flowers make two pairs between them,
+   * as do the four seasons, since any two of a group match. */
+  function deckPairs() {
+    var pairs = [];
+    FACES.forEach(function (f) {
+      if (f.group === 'flower' || f.group === 'season') return;
+      pairs.push([f.id, f.id]);
+      pairs.push([f.id, f.id]);
+    });
+    pairs.push(['flower_plum', 'flower_orchid']);
+    pairs.push(['flower_chrys', 'flower_bamboo']);
+    pairs.push(['season_spring', 'season_summer']);
+    pairs.push(['season_autumn', 'season_winter']);
+    return pairs;
+  }
+
+  global.Tiles = {
+    faces: FACES,
+    get: function (id) { return BY_ID[id]; },
+    group: function (id) { return BY_ID[id].group; },
+    matches: function (a, b) { return BY_ID[a].group === BY_ID[b].group; },
+    deckPairs: deckPairs,
+    art: function (id) { return BY_ID[id].art; }
+  };
+})(window);
+
+/* Game rules and board generation.
+ *
+ * The one thing that matters most here: every board is dealt so that it is
+ * winnable. A randomly-filled mahjong board frequently is not, which is a
+ * miserable way to lose. Instead we build the board backwards -- repeatedly
+ * choosing two positions that are free, assigning them a matching pair, and
+ * setting them aside. Replaying those choices in the same order is a
+ * guaranteed solution, so one always exists.
+ */
+(function (global) {
+  'use strict';
+
+  var EPS = 1e-6;
+
+  function overlaps(a, b) {
+    return Math.abs(a.x - b.x) < 1 - EPS && Math.abs(a.y - b.y) < 1 - EPS;
+  }
+
+  /* Build the neighbour tables once per layout. A tile is blocked from above
+   * by anything on the next level that overlaps it, and blocked on a side by
+   * a tile on the same level whose centre sits within one tile-width. */
+  function analyse(layout) {
+    var slots = layout.slots.map(function (s, i) {
+      return { i: i, x: s.x, y: s.y, z: s.z, above: [], left: [], right: [] };
+    });
+    for (var a = 0; a < slots.length; a++) {
+      for (var b = 0; b < slots.length; b++) {
+        if (a === b) continue;
+        var A = slots[a], B = slots[b];
+        if (B.z === A.z + 1 && overlaps(A, B)) A.above.push(b);
+        if (B.z === A.z && Math.abs(A.y - B.y) < 1 - EPS) {
+          var d = A.x - B.x;
+          if (d > EPS && d < 1 + EPS) A.left.push(b);
+          else if (-d > EPS && -d < 1 + EPS) A.right.push(b);
+        }
+      }
+    }
+    return slots;
+  }
+
+  function anyPresent(list, present) {
+    for (var i = 0; i < list.length; i++) if (present[list[i]]) return true;
+    return false;
+  }
+
+  // A tile can be picked up if nothing rests on it and one long side is clear.
+  function isFree(slot, present) {
+    if (anyPresent(slot.above, present)) return false;
+    return !anyPresent(slot.left, present) || !anyPresent(slot.right, present);
+  }
+
+  function freeIndices(slots, present) {
+    var out = [];
+    for (var i = 0; i < slots.length; i++) {
+      if (present[i] && isFree(slots[i], present)) out.push(i);
+    }
+    return out;
+  }
+
+  // Small seedable PRNG so a board can be replayed from its seed alone.
+  function rng(seed) {
+    var s = seed >>> 0 || 1;
+    return function () {
+      s ^= s << 13; s >>>= 0;
+      s ^= s >> 17;
+      s ^= s << 5; s >>>= 0;
+      return s / 4294967296;
+    };
+  }
+
+  function shuffled(arr, rand) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rand() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  /* Pick a free position, strongly preferring the highest stack level. This
+   * unstacks the board roughly top-down, which both mirrors how the game is
+   * actually played and avoids stranding a lone covered tile at the end. */
+  function pickWeighted(free, slots, rand) {
+    var weights = free.map(function (i) { return Math.pow(8, slots[i].z); });
+    var total = weights.reduce(function (a, b) { return a + b; }, 0);
+    var r = rand() * total;
+    for (var k = 0; k < free.length; k++) {
+      r -= weights[k];
+      if (r <= 0) return k;
+    }
+    return free.length - 1;
+  }
+
+  /* Choose a removal order over `positions`, or null if we paint ourselves
+   * into a corner (rare, and the caller simply retries). */
+  function removalOrder(slots, positions, rand) {
+    var present = new Array(slots.length).fill(false);
+    positions.forEach(function (i) { present[i] = true; });
+    var order = [];
+    var left = positions.length;
+    while (left > 0) {
+      var free = freeIndices(slots, present);
+      if (free.length < 2) return null;
+      var ka = pickWeighted(free, slots, rand);
+      var a = free[ka];
+      free.splice(ka, 1);
+      var b = free[pickWeighted(free, slots, rand)];
+      present[a] = false;
+      present[b] = false;
+      order.push([a, b]);
+      left -= 2;
+    }
+    return order;
+  }
+
+  /* Deal a fresh solvable board. */
+  function deal(layout, seed) {
+    var slots = analyse(layout);
+    var rand = rng(seed);
+    var positions = slots.map(function (s) { return s.i; });
+
+    for (var attempt = 0; attempt < 400; attempt++) {
+      var order = removalOrder(slots, positions, rand);
+      if (!order) continue;
+      var pairs = shuffled(global.Tiles.deckPairs(), rand).slice(0, order.length);
+      var faces = new Array(slots.length).fill(null);
+      order.forEach(function (pair, k) {
+        var p = shuffled(pairs[k], rand);
+        faces[pair[0]] = p[0];
+        faces[pair[1]] = p[1];
+      });
+      return { slots: slots, faces: faces, solution: order, seed: seed };
+    }
+    throw new Error('could not deal a solvable ' + layout.id + ' board');
+  }
+
+  /* Rearrange the tiles still on the board into a fresh solvable position.
+   * Most implementations reshuffle at random and can hand back a dead board;
+   * reusing the dealer here means a shuffle always leaves the game winnable. */
+  function reshuffle(slots, faces, present, seed) {
+    var positions = [];
+    for (var i = 0; i < slots.length; i++) if (present[i]) positions.push(i);
+    if (positions.length < 2) return null;
+
+    // Regroup the surviving faces into legal pairs.
+    var byGroup = {};
+    positions.forEach(function (i) {
+      var g = global.Tiles.group(faces[i]);
+      (byGroup[g] = byGroup[g] || []).push(faces[i]);
+    });
+    var pairs = [];
+    for (var g in byGroup) {
+      var list = byGroup[g];
+      if (list.length % 2 !== 0) return null;  // should never happen
+      for (var k = 0; k < list.length; k += 2) pairs.push([list[k], list[k + 1]]);
+    }
+
+    var rand = rng(seed);
+    for (var attempt = 0; attempt < 400; attempt++) {
+      var order = removalOrder(slots, positions, rand);
+      if (!order) continue;
+      var mix = shuffled(pairs, rand);
+      var next = faces.slice();
+      order.forEach(function (pair, idx) {
+        var p = shuffled(mix[idx], rand);
+        next[pair[0]] = p[0];
+        next[pair[1]] = p[1];
+      });
+      return next;
+    }
+    return null;
+  }
+
+  // Every matching pair currently available, used for hints and for
+  // detecting a dead board.
+  function availableMoves(slots, faces, present) {
+    var free = freeIndices(slots, present);
+    var moves = [];
+    for (var i = 0; i < free.length; i++) {
+      for (var j = i + 1; j < free.length; j++) {
+        if (global.Tiles.matches(faces[free[i]], faces[free[j]])) {
+          moves.push([free[i], free[j]]);
+        }
+      }
+    }
+    return moves;
+  }
+
+  global.Engine = {
+    analyse: analyse,
+    isFree: isFree,
+    freeIndices: freeIndices,
+    deal: deal,
+    reshuffle: reshuffle,
+    availableMoves: availableMoves,
+    rng: rng
+  };
+})(window);
+
+/* Screen, input and persistence. */
+(function (global) {
+  'use strict';
+
+  var TW = 62, TH = 84, DX = 6, DY = 8;
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---- stored data ----------------------------------------------------- */
+  function load(key, fallback) {
+    try {
+      var raw = localStorage.getItem('mahjong.' + key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) { return fallback; }
+  }
+  function save(key, value) {
+    try { localStorage.setItem('mahjong.' + key, JSON.stringify(value)); } catch (e) {}
+  }
+
+  var settings = load('settings', { sound: true, dimBlocked: true });
+  var bests = load('bests', {});
+
+  /* ---- sound ----------------------------------------------------------- *
+   * Generated with the Web Audio API, so there are no audio files to load
+   * and nothing extra to cache offline. */
+  var actx = null;
+  function audio() {
+    if (!settings.sound) return null;
+    if (!actx) {
+      var AC = global.AudioContext || global.webkitAudioContext;
+      if (!AC) return null;
+      actx = new AC();
+    }
+    if (actx.state === 'suspended') actx.resume();
+    return actx;
+  }
+  function tone(freq, start, dur, peak, type) {
+    var ac = audio(); if (!ac) return;
+    var t = ac.currentTime + start;
+    var osc = ac.createOscillator(), gain = ac.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(peak, t + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(gain).connect(ac.destination);
+    osc.start(t); osc.stop(t + dur + 0.02);
+  }
+  var sfx = {
+    select:  function () { tone(620, 0, 0.06, 0.12); },
+    match:   function () { tone(880, 0, 0.12, 0.16); tone(1320, 0.07, 0.18, 0.12); },
+    blocked: function () { tone(150, 0, 0.11, 0.13, 'square'); },
+    undo:    function () { tone(420, 0, 0.09, 0.11, 'triangle'); },
+    win:     function () { [523, 659, 784, 1047].forEach(function (f, i) { tone(f, i * 0.11, 0.34, 0.15); }); }
+  };
+
+  /* ---- game state ------------------------------------------------------ */
+  var G = {
+    layout: null, slots: null, faces: null, present: null,
+    els: [], undo: [], selected: null,
+    moves: 0, shuffles: 0, elapsed: 0, startedAt: null,
+    hints: [], hintAt: 0, seed: 0, finished: false
+  };
+
+  function running() { return G.startedAt !== null && !G.finished; }
+  function elapsedMs() { return G.elapsed + (running() ? Date.now() - G.startedAt : 0); }
+  function pause() { if (running()) { G.elapsed += Date.now() - G.startedAt; G.startedAt = null; } }
+  function resume() { if (!G.finished && G.startedAt === null) G.startedAt = Date.now(); }
+
+  function formatTime(ms) {
+    var s = Math.floor(ms / 1000);
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+    var mm = h ? String(m).padStart(2, '0') : String(m);
+    return (h ? h + ':' : '') + mm + ':' + String(sec).padStart(2, '0');
+  }
+
+  /* ---- building the board ---------------------------------------------- */
+  function buildBoard() {
+    var board = $('board');
+    board.textContent = '';
+    G.els = [];
+    var maxZ = G.slots.reduce(function (m, s) { return Math.max(m, s.z); }, 0);
+
+    G.slots.forEach(function (slot, i) {
+      var el = document.createElement('div');
+      el.className = 'tile';
+      el.style.left = ((slot.x - G.layout.originX) * TW + slot.z * DX) + 'px';
+      el.style.top = ((slot.y - G.layout.originY) * TH + (maxZ - slot.z) * DY) + 'px';
+      el.style.zIndex = Math.round(slot.z * 100000 + slot.y * 200 + slot.x * 2);
+      el.dataset.z = slot.z;
+      var face = document.createElement('div');
+      face.className = 'face';
+      face.innerHTML = '<svg viewBox="0 0 100 132" aria-hidden="true">' +
+                       global.Tiles.art(G.faces[i]) + '</svg>';
+      el.appendChild(face);
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', global.Tiles.get(G.faces[i]).label);
+      el.addEventListener('click', function () { onTap(i); });
+      board.appendChild(el);
+      G.els.push(el);
+    });
+
+    board.dataset.w = G.layout.width * TW + maxZ * DX;
+    board.dataset.h = G.layout.height * TH + maxZ * DY;
+    fit();
+    refresh();
+  }
+
+  // Scale the board to fill the stage without cropping.
+  function fit() {
+    var stage = $('stage'), board = $('board');
+    if (!board.dataset.w) return;
+    var W = +board.dataset.w, H = +board.dataset.h;
+    var pad = 10;
+    var sw = stage.clientWidth - pad * 2, sh = stage.clientHeight - pad * 2;
+    var k = Math.min(sw / W, sh / H);
+    board.style.transform = 'translate(' + ((stage.clientWidth - W * k) / 2) + 'px,' +
+                            ((stage.clientHeight - H * k) / 2) + 'px) scale(' + k + ')';
+
+    // Only suggest rotating when it would actually make the tiles usable.
+    var tooSmall = k * TW < 42;
+    var portrait = stage.clientHeight > stage.clientWidth;
+    $('rotate-hint').hidden = !(tooSmall && portrait && G.layout.wide);
+  }
+
+  /* ---- rendering the current position ---------------------------------- */
+  function refresh() {
+    var left = 0;
+    for (var i = 0; i < G.slots.length; i++) {
+      var el = G.els[i];
+      if (!G.present[i]) { el.classList.add('hidden'); continue; }
+      left++;
+      el.classList.remove('hidden');
+      var free = global.Engine.isFree(G.slots[i], G.present);
+      el.classList.toggle('blocked', settings.dimBlocked && !free);
+      el.classList.toggle('selected', G.selected === i);
+    }
+    $('stat-left').textContent = left;
+    $('stat-layout').textContent = G.layout.name;
+    $('btn-undo').disabled = G.undo.length === 0;
+    $('shuffle-count').textContent = G.shuffles ? '(' + G.shuffles + ' used)' : '';
+    return left;
+  }
+
+  function tick() { $('stat-time').textContent = formatTime(elapsedMs()); }
+
+  var toastTimer = null;
+  function toast(msg) {
+    var t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('show'); }, 1900);
+  }
+
+  function clearHint() {
+    G.els.forEach(function (el) { el.classList.remove('hinted'); });
+  }
+
+  /* ---- playing --------------------------------------------------------- */
+  function onTap(i) {
+    if (G.finished || !G.present[i]) return;
+    clearHint();
+    resume();
+
+    if (!global.Engine.isFree(G.slots[i], G.present)) {
+      var el = G.els[i];
+      el.classList.remove('nope'); void el.offsetWidth; el.classList.add('nope');
+      setTimeout(function () { el.classList.remove('nope'); }, 340);
+      sfx.blocked();
+      return;
+    }
+
+    if (G.selected === i) { G.selected = null; refresh(); return; }
+    if (G.selected !== null && global.Tiles.matches(G.faces[G.selected], G.faces[i])) {
+      take(G.selected, i);
+      return;
+    }
+    G.selected = i;
+    sfx.select();
+    refresh();
+  }
+
+  function take(a, b) {
+    G.present[a] = false; G.present[b] = false;
+    G.selected = null;
+    G.moves++;
+    G.undo.push({ t: 'm', a: a, b: b });
+    [a, b].forEach(function (i) {
+      var el = G.els[i];
+      el.classList.remove('selected');
+      el.classList.add('gone');
+      setTimeout(function () { el.classList.remove('gone'); el.classList.add('hidden'); }, 260);
+    });
+    sfx.match();
+    var left = refresh();
+    persist();
+    if (left === 0) win();
+    else if (global.Engine.availableMoves(G.slots, G.faces, G.present).length === 0) {
+      setTimeout(openStuck, 420);
+    }
+  }
+
+  function undoMove() {
+    if (!G.undo.length) return;
+    clearHint();
+    var step = G.undo.pop();
+    if (step.t === 'm') {
+      G.present[step.a] = true; G.present[step.b] = true;
+      [step.a, step.b].forEach(function (i) { G.els[i].classList.remove('hidden', 'gone'); });
+      G.moves = Math.max(0, G.moves - 1);
+    } else {                       // undo a shuffle: put the old faces back
+      G.faces = step.faces.slice();
+      G.shuffles = Math.max(0, G.shuffles - 1);
+      repaintFaces();
+    }
+    G.selected = null;
+    G.finished = false;
+    sfx.undo();
+    refresh();
+    persist();
+  }
+
+  function repaintFaces() {
+    G.faces.forEach(function (id, i) {
+      G.els[i].querySelector('.face').innerHTML =
+        '<svg viewBox="0 0 100 132" aria-hidden="true">' + global.Tiles.art(id) + '</svg>';
+      G.els[i].setAttribute('aria-label', global.Tiles.get(id).label);
+    });
+  }
+
+  function hint() {
+    resume();
+    var moves = global.Engine.availableMoves(G.slots, G.faces, G.present);
+    clearHint();
+    if (!moves.length) { openStuck(); return; }
+    if (G.hintAt >= moves.length) G.hintAt = 0;
+    var pair = moves[G.hintAt++];
+    G.els[pair[0]].classList.add('hinted');
+    G.els[pair[1]].classList.add('hinted');
+    sfx.select();
+    if (moves.length > 1) toast(moves.length + ' pairs available');
+  }
+
+  function shuffle() {
+    if (G.finished) return;
+    var before = G.faces.slice();
+    var next = global.Engine.reshuffle(G.slots, G.faces, G.present, (Math.random() * 1e9) | 0);
+    if (!next) { openStuck(); return; }
+    G.undo.push({ t: 's', faces: before });
+    G.faces = next;
+    G.shuffles++;
+    G.selected = null;
+    clearHint();
+    repaintFaces();
+    refresh();
+    persist();
+    closeOverlays();
+    toast('Tiles rearranged — still winnable');
+  }
+
+  /* Once the survivors are stacked in a single column, only the top tile is
+   * ever free, so no rearrangement can match them -- the position is dead by
+   * geometry rather than by luck. Undoing one move always reopens it, because
+   * the pair just taken back was legal a moment ago. Say which one works. */
+  function openStuck() {
+    var canShuffle = global.Engine.reshuffle(
+      G.slots, G.faces, G.present, (Math.random() * 1e9) | 0) !== null;
+    var canUndo = G.undo.length > 0;
+    $('btn-stuck-shuffle').hidden = !canShuffle;
+    $('btn-stuck-undo').hidden = !canUndo;
+    $('btn-stuck-undo').classList.toggle('primary', !canShuffle && canUndo);
+    $('stuck-title').textContent = canShuffle ? 'No moves left' : 'This board cannot be finished';
+    $('stuck-detail').textContent = canShuffle
+      ? 'Nothing on the board matches any more. Shuffling rearranges the remaining tiles into a position that can still be won.'
+      : (canUndo
+          ? 'The tiles that are left sit stacked on top of one another, so no arrangement of them could be matched. Taking back a move opens the board up again.'
+          : 'The tiles that are left sit stacked on top of one another, so no arrangement of them could be matched.');
+    openOverlay('stuck');
+  }
+
+  function win() {
+    G.finished = true;
+    pause();
+    var secs = Math.round(elapsedMs() / 1000);
+    var prev = bests[G.layout.id];
+    var record = !prev || secs < prev;
+    if (record) { bests[G.layout.id] = secs; save('bests', bests); }
+    sfx.win();
+    $('win-detail').textContent =
+      G.layout.name + ' cleared in ' + formatTime(secs * 1000) + ' and ' + G.moves + ' moves.' +
+      (record ? ' That is your best time yet.' : ' Your best is ' + formatTime(prev * 1000) + '.');
+    try { localStorage.removeItem('mahjong.save'); } catch (e) {}
+    openOverlay('win');
+  }
+
+  /* ---- new games and saved games --------------------------------------- */
+  function newGame(layoutId, seed) {
+    var layout = global.Layouts.byId(layoutId);
+    var board = global.Engine.deal(layout, seed || ((Math.random() * 4294967295) >>> 0));
+    G.layout = layout;
+    G.slots = board.slots;
+    G.faces = board.faces;
+    G.seed = board.seed;
+    G.present = new Array(board.slots.length).fill(true);
+    G.undo = []; G.selected = null; G.moves = 0; G.shuffles = 0;
+    G.elapsed = 0; G.startedAt = null; G.hintAt = 0; G.finished = false;
+    save('lastLayout', layout.id);
+    buildBoard();
+    tick();
+    persist();
+  }
+
+  function persist() {
+    if (G.finished) return;
+    save('save', {
+      layout: G.layout.id, seed: G.seed, faces: G.faces,
+      present: G.present, undo: G.undo, moves: G.moves,
+      shuffles: G.shuffles, elapsed: elapsedMs()
+    });
+  }
+
+  function restore() {
+    var s = load('save', null);
+    if (!s || !s.faces) return false;
+    var layout = global.Layouts.byId(s.layout);
+    if (s.faces.length !== layout.count) return false;
+    G.layout = layout;
+    G.slots = global.Engine.analyse(layout);
+    G.faces = s.faces;
+    G.present = s.present;
+    G.seed = s.seed;
+    G.undo = s.undo || [];
+    G.moves = s.moves || 0;
+    G.shuffles = s.shuffles || 0;
+    G.elapsed = s.elapsed || 0;
+    G.startedAt = null; G.selected = null; G.hintAt = 0; G.finished = false;
+    buildBoard();
+    tick();
+    return true;
+  }
+
+  /* ---- overlays -------------------------------------------------------- */
+  function openOverlay(id) {
+    pause();
+    closeOverlays();
+    if (id === 'menu') renderMenu();
+    $(id).hidden = false;
+  }
+  function closeOverlays() {
+    ['menu', 'win', 'stuck'].forEach(function (id) { $(id).hidden = true; });
+  }
+
+  function renderMenu() {
+    var list = $('layout-list');
+    list.textContent = '';
+    global.Layouts.all.forEach(function (l) {
+      var btn = document.createElement('button');
+      btn.className = 'choice';
+      if (G.layout && l.id === G.layout.id) btn.setAttribute('aria-current', 'true');
+      var best = bests[l.id] ? 'Best ' + formatTime(bests[l.id] * 1000) : '';
+      btn.innerHTML = '<div class="body"><div class="name">' + l.name + ' &middot; ' + l.count +
+                      ' tiles</div><div class="desc">' + l.blurb + '</div></div>' +
+                      '<div class="best">' + best + '</div>';
+      btn.addEventListener('click', function () { closeOverlays(); newGame(l.id); });
+      list.appendChild(btn);
+    });
+    $('sound-state').textContent = settings.sound ? 'On' : 'Off';
+    $('showfree-state').textContent = settings.dimBlocked ? 'On' : 'Off';
+  }
+
+  /* ---- wiring ---------------------------------------------------------- */
+  function init() {
+    $('btn-undo').addEventListener('click', undoMove);
+    $('btn-hint').addEventListener('click', hint);
+    $('btn-shuffle').addEventListener('click', shuffle);
+    $('btn-menu').addEventListener('click', function () { openOverlay('menu'); });
+
+    $('btn-resume').addEventListener('click', function () { closeOverlays(); resume(); });
+    $('btn-restart').addEventListener('click', function () {
+      closeOverlays(); newGame(G.layout.id, G.seed);
+    });
+    $('btn-sound').addEventListener('click', function () {
+      settings.sound = !settings.sound; save('settings', settings);
+      $('sound-state').textContent = settings.sound ? 'On' : 'Off';
+      if (settings.sound) sfx.select();
+    });
+    $('btn-showfree').addEventListener('click', function () {
+      settings.dimBlocked = !settings.dimBlocked; save('settings', settings);
+      $('showfree-state').textContent = settings.dimBlocked ? 'On' : 'Off';
+      refresh();
+    });
+
+    $('btn-again').addEventListener('click', function () { closeOverlays(); newGame(G.layout.id); });
+    $('btn-win-menu').addEventListener('click', function () { openOverlay('menu'); });
+    $('btn-stuck-shuffle').addEventListener('click', shuffle);
+    $('btn-stuck-undo').addEventListener('click', function () { closeOverlays(); undoMove(); resume(); });
+    $('btn-stuck-new').addEventListener('click', function () { closeOverlays(); newGame(G.layout.id); });
+
+    global.addEventListener('resize', fit);
+    global.addEventListener('load', fit);
+    global.addEventListener('orientationchange', function () { setTimeout(fit, 120); });
+    // Android collapses the address bar after first paint, which changes the
+    // usable height without firing a normal resize.
+    if (global.visualViewport) global.visualViewport.addEventListener('resize', fit);
+    if (global.requestAnimationFrame) global.requestAnimationFrame(fit);
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { pause(); persist(); } else if (isPlaying()) resume();
+    });
+    function isPlaying() {
+      return ['menu', 'win', 'stuck'].every(function (id) { return $(id).hidden; });
+    }
+
+    setInterval(function () { if (running()) tick(); }, 500);
+    setInterval(persist, 10000);
+
+    if (!restore()) newGame(load('lastLayout', 'garden'));
+
+    // (service worker omitted: this build is already fully self-contained)
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})(window);
+
+</script>
+</body>
+</html>

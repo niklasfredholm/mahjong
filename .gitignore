@@ -1,0 +1,5 @@
+# built artefacts and local noise
+__pycache__/
+*.pyc
+*.log
+.DS_Store
