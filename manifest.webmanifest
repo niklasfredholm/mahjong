@@ -1,7 +1,9 @@
 {
-  "name": "Mahjong Solitaire",
+  "lang": "sv",
+  "dir": "ltr",
+  "name": "Mahjong Solitär",
   "short_name": "Mahjong",
-  "description": "A calm, offline game of mahjong solitaire.",
+  "description": "Ett lugnt mahjongspel som fungerar utan internet.",
   "start_url": "./index.html",
   "scope": "./",
   "id": "./index.html",
@@ -9,11 +11,34 @@
   "orientation": "any",
   "background_color": "#10362a",
   "theme_color": "#10362a",
-  "categories": ["games", "puzzle"],
+  "categories": [
+    "games",
+    "puzzle"
+  ],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }

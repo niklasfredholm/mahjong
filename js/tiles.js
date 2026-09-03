@@ -11,7 +11,6 @@
 
   var CJK_NUM = ['一', '二', '三', '四', '五',
                  '六', '七', '八', '九'];
-  var ORDINAL = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 
   var INK = '#2b3038';
   var RED = '#b3251f';
@@ -100,38 +99,38 @@
   }
 
   for (var n = 1; n <= 9; n++) {
-    add('pin' + n, 'pin' + n, ORDINAL[n - 1] + ' of Circles', pinFace(n));
-    add('sou' + n, 'sou' + n, ORDINAL[n - 1] + ' of Bamboo', souFace(n));
-    add('man' + n, 'man' + n, ORDINAL[n - 1] + ' of Characters', manFace(n));
+    add('pin' + n, 'pin' + n, 'Cirklar ' + n, pinFace(n));
+    add('sou' + n, 'sou' + n, 'Bambu ' + n, souFace(n));
+    add('man' + n, 'man' + n, 'Tecken ' + n, manFace(n));
   }
 
-  [['east', '東', 'East Wind'], ['south', '南', 'South Wind'],
-   ['west', '西', 'West Wind'], ['north', '北', 'North Wind']
+  [['east', '東', 'Östanvind'], ['south', '南', 'Sunnanvind'],
+   ['west', '西', 'Västanvind'], ['north', '北', 'Nordanvind']
   ].forEach(function (w) {
     add('wind_' + w[0], 'wind_' + w[0], w[2], text(w[1], 50, 66, 62, INK));
   });
 
-  add('dragon_red', 'dragon_red', 'Red Dragon', text('中', 50, 66, 62, RED));
-  add('dragon_green', 'dragon_green', 'Green Dragon', text('發', 50, 66, 58, GREEN));
-  add('dragon_white', 'dragon_white', 'White Dragon',
+  add('dragon_red', 'dragon_red', 'Röd drake', text('中', 50, 66, 62, RED));
+  add('dragon_green', 'dragon_green', 'Grön drake', text('發', 50, 66, 58, GREEN));
+  add('dragon_white', 'dragon_white', 'Vit drake',
       '<rect x="20" y="26" width="60" height="80" rx="6" fill="none" stroke="' + BLUE + '" stroke-width="5"/>' +
       '<rect x="30" y="36" width="40" height="60" rx="3" fill="none" stroke="' + BLUE + '" stroke-width="2" opacity="0.5"/>');
 
   // Flowers and seasons are bonus tiles: any flower matches any other flower,
   // and likewise for seasons. The coloured bar along the foot of the tile is
   // the visual cue for that, so the rule is readable without being told.
-  [['plum', '梅', 'Plum'], ['orchid', '蘭', 'Orchid'],
-   ['chrys', '菊', 'Chrysanthemum'], ['bamboo', '竹', 'Bamboo']
+  [['plum', '梅', 'Plommon'], ['orchid', '蘭', 'Orkidé'],
+   ['chrys', '菊', 'Krysantemum'], ['bamboo', '竹', 'Bambu']
   ].forEach(function (f) {
-    add('flower_' + f[0], 'flower', f[2] + ' (flower)',
+    add('flower_' + f[0], 'flower', f[2] + ' (blomma)',
         text(f[1], 50, 60, 54, GREEN) +
         '<rect x="24" y="104" width="52" height="7" rx="3.5" fill="' + GREEN + '"/>');
   });
 
-  [['spring', '春', 'Spring'], ['summer', '夏', 'Summer'],
-   ['autumn', '秋', 'Autumn'], ['winter', '冬', 'Winter']
+  [['spring', '春', 'Vår'], ['summer', '夏', 'Sommar'],
+   ['autumn', '秋', 'Höst'], ['winter', '冬', 'Vinter']
   ].forEach(function (s) {
-    add('season_' + s[0], 'season', s[2] + ' (season)',
+    add('season_' + s[0], 'season', s[2] + ' (årstid)',
         text(s[1], 50, 60, 54, BLUE) +
         '<circle cx="42" cy="107" r="4" fill="' + BLUE + '"/>' +
         '<circle cx="58" cy="107" r="4" fill="' + BLUE + '"/>');

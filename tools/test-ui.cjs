@@ -73,7 +73,7 @@ console.log('\n== a full game, played through the real click handlers ==');
   check(Number(env.byId['stat-left'].textContent) === 0, 'counter reached zero');
   check(env.byId.win.hidden === false, 'win screen appeared');
   check(env.store.get('mahjong.save') === undefined, 'finished game cleared its autosave');
-  check(/cleared in/.test(env.byId['win-detail'].textContent), 'win screen reports a result');
+  check(/klarad på/.test(env.byId['win-detail'].textContent), 'win screen reports a result');
   check(typeof JSON.parse(env.store.get('mahjong.bests')).turtle === 'number', 'best time was recorded');
 }
 
@@ -152,7 +152,7 @@ console.log('\n== the game survives being closed mid-play ==');
 
   const env2 = boot(s => { for (const [k, v] of env.store) s.set(k, v); });   // relaunch
   const resumed = readBoard(env2);
-  check(env2.byId['stat-layout'].textContent === 'Pyramid', 'reopened on the same board');
+  check(env2.byId['stat-layout'].textContent === 'Pyramiden', 'reopened on the same board');
   check(Number(env2.byId['stat-left'].textContent) === 110, 'reopened with 110 tiles left');
   check(resumed.faces.join() === mid.faces.join(), 'tile faces restored exactly');
   check(resumed.present.join() === mid.present.join(), 'cleared tiles stayed cleared');
@@ -189,7 +189,7 @@ console.log('\n== a dead board announces itself ==');
   const env = boot(s => s.set('mahjong.lastLayout', '"turtle"'));
   const startFreshTurtle = () => {
     env.byId['btn-menu'].click(); env.flush();
-    const turtleRow = env.byId['layout-list'].children.find(c => /Turtle/.test(c.innerHTML));
+    const turtleRow = env.byId['layout-list'].children.find(c => /Sköldpaddan/.test(c.innerHTML));
     turtleRow.click(); env.flush();
   };
 
@@ -260,7 +260,7 @@ console.log('\n== a stack that cannot be matched is called out honestly ==');
 
   env.byId['btn-shuffle'].click(); env.flush();
   check(env.byId.stuck.hidden === false, 'tapping Shuffle explains the situation instead of failing silently');
-  check(env.byId['stuck-title'].textContent === 'This board cannot be finished', 'the screen says the board is unfinishable');
+  check(env.byId['stuck-title'].textContent === 'Det här brädet går inte att klara', 'the screen says the board is unfinishable');
   check(env.byId['btn-stuck-shuffle'].hidden === true, 'the Shuffle button is withdrawn, not left as a dead end');
   check(env.byId['btn-stuck-undo'].hidden === false, 'undo is offered');
   check(env.byId['btn-stuck-undo'].classList.contains('primary'), 'undo is promoted to the primary action');

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>Mahjong</title>
-<meta name="description" content="A calm, offline game of mahjong solitaire.">
+<meta name="description" content="Ett lugnt mahjongspel som fungerar utan internet.">
 <meta name="theme-color" content="#10362a">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,59 +16,59 @@
 <body>
 <div id="app">
   <div id="topbar">
-    <div class="stat"><b id="stat-layout">Turtle</b><span>Board</span></div>
+    <div class="stat"><b id="stat-layout">Sköldpaddan</b><span>Bräde</span></div>
     <div class="spacer"></div>
-    <div class="stat"><b id="stat-left">144</b><span>Tiles left</span></div>
-    <div class="stat"><b id="stat-time">0:00</b><span>Time</span></div>
+    <div class="stat"><b id="stat-left">144</b><span>Brickor kvar</span></div>
+    <div class="stat"><b id="stat-time">0:00</b><span>Tid</span></div>
   </div>
 
   <div id="stage">
     <div id="board"></div>
-    <div id="rotate-hint" hidden><span class="glyph">&#8635;</span> Turn sideways for bigger tiles</div>
+    <div id="rotate-hint" hidden><span class="glyph">&#8635;</span> Vrid telefonen för större brickor</div>
     <div id="toast"></div>
   </div>
 
   <div id="controls">
-    <button id="btn-undo"><span class="glyph">&#8630;</span>Undo</button>
-    <button id="btn-hint"><span class="glyph">&#128161;</span>Hint</button>
-    <button id="btn-shuffle"><span class="glyph">&#9862;</span>Shuffle<span class="count" id="shuffle-count"></span></button>
-    <button id="btn-menu"><span class="glyph">&#9776;</span>Menu</button>
+    <button id="btn-undo"><span class="glyph">&#8630;</span>Ångra</button>
+    <button id="btn-hint"><span class="glyph">&#128161;</span>Tips</button>
+    <button id="btn-shuffle"><span class="glyph">&#9862;</span>Blanda<span class="count" id="shuffle-count"></span></button>
+    <button id="btn-menu"><span class="glyph">&#9776;</span>Meny</button>
   </div>
 
   <!-- Menu ------------------------------------------------------------- -->
   <div class="overlay" id="menu" hidden>
     <div class="sheet">
       <h1>Mahjong</h1>
-      <p class="lede">Match two identical tiles that are free to lift. A tile is free when nothing sits on top of it and one long side is clear.</p>
-      <h2>Choose a board</h2>
+      <p class="lede">Para ihop två likadana brickor som går att lyfta. En bricka går att lyfta när ingenting ligger ovanpå den och någon av långsidorna är fri.</p>
+      <h2>Välj ett bräde</h2>
       <div id="layout-list"></div>
-      <h2>This game</h2>
-      <button class="wide-btn primary" id="btn-resume">Keep playing</button>
-      <button class="wide-btn" id="btn-restart">Start this board again</button>
-      <h2>Settings</h2>
-      <button class="toggle" id="btn-sound">Sound<span class="state" id="sound-state">On</span></button>
-      <button class="toggle" id="btn-showfree">Dim the tiles you can&rsquo;t lift<span class="state" id="showfree-state">On</span></button>
+      <h2>Det här spelet</h2>
+      <button class="wide-btn primary" id="btn-resume">Fortsätt spela</button>
+      <button class="wide-btn" id="btn-restart">Börja om på samma bräde</button>
+      <h2>Inställningar</h2>
+      <button class="toggle" id="btn-sound">Ljud<span class="state" id="sound-state">På</span></button>
+      <button class="toggle" id="btn-showfree">Tona ner brickor som inte går att lyfta<span class="state" id="showfree-state">På</span></button>
     </div>
   </div>
 
   <!-- Win -------------------------------------------------------------- -->
   <div class="overlay" id="win" hidden>
     <div class="sheet">
-      <h1>Board cleared</h1>
+      <h1>Brädet är rensat</h1>
       <p class="lede" id="win-detail"></p>
-      <button class="wide-btn primary" id="btn-again">New game</button>
-      <button class="wide-btn" id="btn-win-menu">Choose another board</button>
+      <button class="wide-btn primary" id="btn-again">Nytt spel</button>
+      <button class="wide-btn" id="btn-win-menu">Välj ett annat bräde</button>
     </div>
   </div>
 
   <!-- Stuck ------------------------------------------------------------ -->
   <div class="overlay" id="stuck" hidden>
     <div class="sheet">
-      <h1 id="stuck-title">No moves left</h1>
+      <h1 id="stuck-title">Inga drag kvar</h1>
       <p class="lede" id="stuck-detail"></p>
-      <button class="wide-btn primary" id="btn-stuck-shuffle">Shuffle the tiles</button>
-      <button class="wide-btn" id="btn-stuck-undo">Take back my last move</button>
-      <button class="wide-btn" id="btn-stuck-new">Start a new game</button>
+      <button class="wide-btn primary" id="btn-stuck-shuffle">Blanda brickorna</button>
+      <button class="wide-btn" id="btn-stuck-undo">Ta tillbaka mitt senaste drag</button>
+      <button class="wide-btn" id="btn-stuck-new">Starta ett nytt spel</button>
     </div>
   </div>
 </div>

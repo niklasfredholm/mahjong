@@ -238,7 +238,7 @@
     G.els[pair[0]].classList.add('hinted');
     G.els[pair[1]].classList.add('hinted');
     sfx.select();
-    if (moves.length > 1) toast(moves.length + ' pairs available');
+    if (moves.length > 1) toast(moves.length + ' par att välja på');
   }
 
   function shuffle() {
@@ -255,7 +255,7 @@
     refresh();
     persist();
     closeOverlays();
-    toast('Tiles rearranged — still winnable');
+    toast('Brickorna omblandade – går fortfarande att klara');
   }
 
   /* Once the survivors are stacked in a single column, only the top tile is
@@ -269,12 +269,12 @@
     $('btn-stuck-shuffle').hidden = !canShuffle;
     $('btn-stuck-undo').hidden = !canUndo;
     $('btn-stuck-undo').classList.toggle('primary', !canShuffle && canUndo);
-    $('stuck-title').textContent = canShuffle ? 'No moves left' : 'This board cannot be finished';
+    $('stuck-title').textContent = canShuffle ? 'Inga drag kvar' : 'Det här brädet går inte att klara';
     $('stuck-detail').textContent = canShuffle
-      ? 'Nothing on the board matches any more. Shuffling rearranges the remaining tiles into a position that can still be won.'
+      ? 'Inga brickor på brädet passar ihop längre. Om du blandar läggs brickorna om till ett läge som fortfarande går att klara.'
       : (canUndo
-          ? 'The tiles that are left sit stacked on top of one another, so no arrangement of them could be matched. Taking back a move opens the board up again.'
-          : 'The tiles that are left sit stacked on top of one another, so no arrangement of them could be matched.');
+          ? 'Brickorna som är kvar ligger staplade på varandra, så ingen omblandning kan få dem att passa ihop. Ta tillbaka ett drag så öppnas brädet igen.'
+          : 'Brickorna som är kvar ligger staplade på varandra, så ingen omblandning kan få dem att passa ihop.');
     openOverlay('stuck');
   }
 
@@ -287,8 +287,8 @@
     if (record) { bests[G.layout.id] = secs; save('bests', bests); }
     sfx.win();
     $('win-detail').textContent =
-      G.layout.name + ' cleared in ' + formatTime(secs * 1000) + ' and ' + G.moves + ' moves.' +
-      (record ? ' That is your best time yet.' : ' Your best is ' + formatTime(prev * 1000) + '.');
+      G.layout.name + ' klarad på ' + formatTime(secs * 1000) + ' och ' + G.moves + ' drag.' +
+      (record ? ' Det är din bästa tid hittills.' : ' Din bästa tid är ' + formatTime(prev * 1000) + '.');
     try { localStorage.removeItem('mahjong.save'); } catch (e) {}
     openOverlay('win');
   }
@@ -357,15 +357,17 @@
       var btn = document.createElement('button');
       btn.className = 'choice';
       if (G.layout && l.id === G.layout.id) btn.setAttribute('aria-current', 'true');
-      var best = bests[l.id] ? 'Best ' + formatTime(bests[l.id] * 1000) : '';
-      btn.innerHTML = '<div class="body"><div class="name">' + l.name + ' &middot; ' + l.count +
-                      ' tiles</div><div class="desc">' + l.blurb + '</div></div>' +
-                      '<div class="best">' + best + '</div>';
+      var best = bests[l.id] ? 'Bästa ' + formatTime(bests[l.id] * 1000) : '';
+      // Count belongs with the description, not the title -- longer board names
+      // otherwise wrap onto a second line.
+      btn.innerHTML = '<div class="body"><div class="name">' + l.name + '</div>' +
+                      '<div class="desc">' + l.count + ' brickor &middot; ' + l.blurb +
+                      '</div></div><div class="best">' + best + '</div>';
       btn.addEventListener('click', function () { closeOverlays(); newGame(l.id); });
       list.appendChild(btn);
     });
-    $('sound-state').textContent = settings.sound ? 'On' : 'Off';
-    $('showfree-state').textContent = settings.dimBlocked ? 'On' : 'Off';
+    $('sound-state').textContent = settings.sound ? 'På' : 'Av';
+    $('showfree-state').textContent = settings.dimBlocked ? 'På' : 'Av';
   }
 
   /* ---- wiring ---------------------------------------------------------- */
@@ -381,12 +383,12 @@
     });
     $('btn-sound').addEventListener('click', function () {
       settings.sound = !settings.sound; save('settings', settings);
-      $('sound-state').textContent = settings.sound ? 'On' : 'Off';
+      $('sound-state').textContent = settings.sound ? 'På' : 'Av';
       if (settings.sound) sfx.select();
     });
     $('btn-showfree').addEventListener('click', function () {
       settings.dimBlocked = !settings.dimBlocked; save('settings', settings);
-      $('showfree-state').textContent = settings.dimBlocked ? 'On' : 'Off';
+      $('showfree-state').textContent = settings.dimBlocked ? 'På' : 'Av';
       refresh();
     });
 

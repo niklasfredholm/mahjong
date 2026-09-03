@@ -58,20 +58,20 @@
   var LAYOUTS = [
     {
       id: 'garden',
-      name: 'Garden',
-      blurb: 'One flat layer. Nothing is buried — a gentle game.',
+      name: 'Trädgården',
+      blurb: 'Ett enda plan. Ingenting ligger begravt – ett lugnt spel.',
       build: garden
     },
     {
       id: 'pyramid',
-      name: 'Pyramid',
-      blurb: 'Four levels, tall and narrow. Fits an upright phone.',
+      name: 'Pyramiden',
+      blurb: 'Fyra våningar, hög och smal. Passar en stående telefon.',
       build: pyramid
     },
     {
       id: 'turtle',
-      name: 'Turtle',
-      blurb: 'The classic 144-tile board. Best played sideways.',
+      name: 'Sköldpaddan',
+      blurb: 'Det klassiska brädet. Bäst med telefonen på tvären.',
       build: turtle
     }
   ];
