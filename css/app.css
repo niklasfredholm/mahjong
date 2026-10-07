@@ -12,6 +12,7 @@
   --tw: 62px;   /* tile width  */
   --th: 84px;   /* tile height */
   --depth: 7px; /* thickness of the visible tile side */
+  color-scheme: dark;   /* see the note in index.html */
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -47,6 +48,13 @@ html, body {
 
 /* ---- board ------------------------------------------------------------ */
 #stage { flex: 1; position: relative; overflow: hidden; }
+/* With larger tiles chosen the board outgrows the screen and is dragged
+   around inside this box; at normal size nothing overflows. */
+#scroll {
+  position: absolute; inset: 0; overflow: auto;
+  overscroll-behavior: contain; scrollbar-width: none;
+}
+#scroll::-webkit-scrollbar { display: none; }
 #board {
   position: absolute; top: 0; left: 0;
   transform-origin: 0 0;

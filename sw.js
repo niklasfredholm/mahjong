@@ -6,7 +6,7 @@
  * revalidation quietly picks up new versions for next time.
  *
  * Bump CACHE when any file below changes, so old copies are evicted. */
-var CACHE = 'mahjong-v2';
+var CACHE = 'mahjong-v3';
 var ASSETS = [
   './',
   './index.html',

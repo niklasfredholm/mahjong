@@ -17,6 +17,9 @@
   }
 
   var settings = load('settings', { sound: true, dimBlocked: true });
+  // Tile size, as a multiple of the size that fits the whole board on screen.
+  var SIZES = [{ k: 1, name: 'Normal' }, { k: 1.35, name: 'Stor' }, { k: 1.7, name: 'Störst' }];
+  function sizeIndex() { return SIZES[settings.size] ? settings.size : 0; }
   var bests = load('bests', {});
 
   /* ---- sound ----------------------------------------------------------- *
@@ -102,24 +105,36 @@
     board.dataset.w = G.layout.width * TW + maxZ * DX;
     board.dataset.h = G.layout.height * TH + maxZ * DY;
     fit();
+    centre();
     refresh();
   }
 
-  // Scale the board to fill the stage without cropping.
+  // Scale the board to fill the stage without cropping -- or, with a larger
+  // tile size chosen, past that, leaving the overflow to be scrolled.
   function fit() {
     var stage = $('stage'), board = $('board');
     if (!board.dataset.w) return;
     var W = +board.dataset.w, H = +board.dataset.h;
     var pad = 10;
     var sw = stage.clientWidth - pad * 2, sh = stage.clientHeight - pad * 2;
-    var k = Math.min(sw / W, sh / H);
-    board.style.transform = 'translate(' + ((stage.clientWidth - W * k) / 2) + 'px,' +
-                            ((stage.clientHeight - H * k) / 2) + 'px) scale(' + k + ')';
+    var k = Math.min(sw / W, sh / H) * SIZES[sizeIndex()].k;
+    // Give the board its real extent plus the margin (in unscaled units), so
+    // the scrollable area ends just past the last tile.
+    board.style.width = (W + pad / k) + 'px';
+    board.style.height = (H + pad / k) + 'px';
+    board.style.transform = 'translate(' + Math.max(pad, (stage.clientWidth - W * k) / 2) + 'px,' +
+                            Math.max(pad, (stage.clientHeight - H * k) / 2) + 'px) scale(' + k + ')';
 
     // Only suggest rotating when it would actually make the tiles usable.
     var tooSmall = k * TW < 42;
     var portrait = stage.clientHeight > stage.clientWidth;
     $('rotate-hint').hidden = !(tooSmall && portrait && G.layout.wide);
+  }
+
+  function centre() {
+    var sc = $('scroll');
+    sc.scrollLeft = (sc.scrollWidth - sc.clientWidth) / 2;
+    sc.scrollTop = (sc.scrollHeight - sc.clientHeight) / 2;
   }
 
   /* ---- rendering the current position ---------------------------------- */
@@ -366,6 +381,7 @@
       btn.addEventListener('click', function () { closeOverlays(); newGame(l.id); });
       list.appendChild(btn);
     });
+    $('size-state').textContent = SIZES[sizeIndex()].name;
     $('sound-state').textContent = settings.sound ? 'På' : 'Av';
     $('showfree-state').textContent = settings.dimBlocked ? 'På' : 'Av';
   }
@@ -380,6 +396,11 @@
     $('btn-resume').addEventListener('click', function () { closeOverlays(); resume(); });
     $('btn-restart').addEventListener('click', function () {
       closeOverlays(); newGame(G.layout.id, G.seed);
+    });
+    $('btn-size').addEventListener('click', function () {
+      settings.size = (sizeIndex() + 1) % SIZES.length; save('settings', settings);
+      $('size-state').textContent = SIZES[sizeIndex()].name;
+      fit(); centre();
     });
     $('btn-sound').addEventListener('click', function () {
       settings.sound = !settings.sound; save('settings', settings);

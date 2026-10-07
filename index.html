@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>Mahjong</title>
 <meta name="description" content="Ett lugnt mahjongspel som fungerar utan internet.">
+<!-- The page is already dark. Saying so stops Android browsers from applying
+     their own "dark mode for websites", which turns the ivory tiles black. -->
+<meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#10362a">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -23,7 +26,7 @@
   </div>
 
   <div id="stage">
-    <div id="board"></div>
+    <div id="scroll"><div id="board"></div></div>
     <div id="rotate-hint" hidden><span class="glyph">&#8635;</span> Vrid telefonen för större brickor</div>
     <div id="toast"></div>
   </div>
@@ -46,6 +49,7 @@
       <button class="wide-btn primary" id="btn-resume">Fortsätt spela</button>
       <button class="wide-btn" id="btn-restart">Börja om på samma bräde</button>
       <h2>Inställningar</h2>
+      <button class="toggle" id="btn-size">Brickstorlek<span class="state" id="size-state">Normal</span></button>
       <button class="toggle" id="btn-sound">Ljud<span class="state" id="sound-state">På</span></button>
       <button class="toggle" id="btn-showfree">Tona ner brickor som inte går att lyfta<span class="state" id="showfree-state">På</span></button>
     </div>
